@@ -15,14 +15,55 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import logo from "../../Assets/Wootlogo.png";
 
 
+const skin = [
+  'Hydra Facial',
+  'Chemical Peel',
+  'Carbon Laser',
+  'Photo Facial',
+  'Glycolic Peel',
+  'Nano Peel',
+  'Light Peel',
+  'Combination Peel',
+  'Yellow Peel',
+  'Salicylic Peel',
+  'Glutathione Peel',
+  'Upper Lip',
+  'Chin',
+  'Upper Arms',
+  'Full hands',
+  'Full legs',
+  'Bikini',
+  'Full Body',
+  'Side Locks',
+  '3 Body part LHR',
+];
+
+const slimming=[
+  'Lymphatic Drainage',
+'Abdomen Tucks',
+'Back Tucks',
+'Thigh Tucks',
+'Arm Tucks',
+'Hip Tucks',
+'Green Coffee-Abdomen, Arms, Hip',
+'Neck',
+'Lipoflush',
+'ULS',
+'NMS',
+'Cello',
+'Cryo(Cool Sculpting)',
+'Diet plans per month'
+]
+
+
 const CustomNavbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [showSubDropdown, setShowSubDropdown] = useState(false);
   const navigate = useNavigate();
 
-  const handleNavigate = (e,path) => {
-    console.log(e.target.value + "treatmentPage")
-    navigate(path);
+  const handleNavigate = (label) => {
+    console.log(label + "treatmentPage")
+    navigate('/TreatmentPage',{state:{label}});
     
   };
   return (
@@ -49,24 +90,24 @@ const CustomNavbar = () => {
             {/* Sliming with dropdown */}
           <Nav.Link>
             <NavDropdown title="Sliming" id="sliming-dropdown">
-              <NavDropdown.Item onClick={(e) => handleNavigate(e,'/TreatmentPage')}>Sliming 1</NavDropdown.Item>
-              <NavDropdown.Item href="#action2">Sliming 2</NavDropdown.Item>
+            {slimming?.map((treatment) => (
+          <NavDropdown.Item key={treatment} onClick={() => handleNavigate(treatment)}>
+            {treatment}
+          </NavDropdown.Item>
+        ))}
             </NavDropdown>
             </Nav.Link>
             {/* Skin with dropdown */}
             <Nav.Link>
-            <NavDropdown title="Skin" id="skin-dropdown">
-              <NavDropdown.Item href="/">Skin Care 1</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">Skin Care 2</NavDropdown.Item>
+            <NavDropdown title="Skin & Hair" id="skin-dropdown">
+            {skin?.map((treatment) => (
+          <NavDropdown.Item key={treatment} onClick={() => handleNavigate(treatment)}>
+            {treatment}
+          </NavDropdown.Item>
+        ))}
             </NavDropdown>
 </Nav.Link>
-            {/* Hair with dropdown */}
-            <Nav.Link>
-            <NavDropdown title="Hair" id="hair-dropdown">
-              <NavDropdown.Item href="#action5">Hair Treatment 1</NavDropdown.Item>
-              <NavDropdown.Item href="#action6">Hair Treatment 2</NavDropdown.Item>
-            </NavDropdown>
-</Nav.Link>
+           
             {/* Career */}
             <Nav.Link to="/">Career</Nav.Link>
 
