@@ -1,0 +1,27 @@
+.trust-title{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 20vh !important;
+}
+
+.trust-contanier{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh !important;
+}
+
+.trust-row{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 80vh !important;  
+}
+
+.trust-img{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 80vh !important;  
+}

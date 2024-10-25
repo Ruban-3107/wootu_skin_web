@@ -1,0 +1,31 @@
+.benefits-list li {
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 20px;
+  }
+  
+  .benefits-list li::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #007bff; /* Customize color here */
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 5px;
+  }
+  
+  .video-card {
+    position: relative;
+  }
+  
+  .play-button-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: white;
+    opacity: 0.7;
+  }
+  

@@ -1,0 +1,48 @@
+/* Style for adding icons inside the placeholders */
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap');
+
+.icon-input {
+    font-family: "Font Awesome 5 Free", "Inria Sans", sans-serif;
+    font-weight: 400; /* Required for Font Awesome solid icons */
+  }
+  
+  .icon-input::placeholder {
+    font-family: "Font Awesome 5 Free", "Inria Sans", sans-serif;
+    font-weight: 400;
+    letter-spacing: 3px;
+    color: #A4A2A2; /* Placeholder color */
+  }
+
+
+  .icon-input{
+   min-height: 8vh;
+  }
+  
+  .contact-container{
+    min-height: 100vh;
+  }
+
+  .contact-row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  .contact-map{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 60vh;
+    flex-direction: column;
+    
+  }
+
+  .form-btn{
+    background-color: #B088EF;
+    width: 100%;
+    height: 7vh;
+    border: none;
+  }
+
+

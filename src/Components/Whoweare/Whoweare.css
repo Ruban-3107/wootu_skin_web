@@ -1,0 +1,32 @@
+span{
+    stroke-width: 10px;
+stroke: #D4AF37;
+}
+
+.border-left{
+    color: #000;
+font-family: "Inria Sans";
+font-size: 68px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+
+.con-text{
+    color: #000;
+font-family: "Inria Sans";
+font-size: 1.8rem;
+
+font-weight: 400;
+line-height: normal;
+}
+
+
+.con-text > span{
+    background: linear-gradient(90deg, #000 0%, #D4AF37 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 4rem;
+    font-weight: 900;
+}

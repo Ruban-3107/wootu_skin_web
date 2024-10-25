@@ -1,0 +1,373 @@
+
+Html,body{
+  padding: 0;
+  margin: 0;
+
+  
+}
+
+.hero-title{
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.topCon-title{
+  min-height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.lead{
+  font-size: 30px;
+  min-height: 10vh;
+}
+
+
+.homecard-container{
+  width: 100%;
+ 
+
+}
+
+.homecard-container > h1{
+  min-height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.homecard-row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+/* global.css */
+/* global.css */
+
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Adjust this value to create the top and bottom space */
+  margin: auto;
+}
+
+.carousel-container {
+  width: 100%;
+  max-width: 1200px;
+  background-color: #fffff0 !important;
+}
+
+.carousel-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.carousel-content {
+  display: flex;
+  width: 100%;
+}
+
+.carousel-image {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.carousel-image img {
+  width: 80%;
+  height: 80vh;
+  border-radius: 10px;
+}
+
+.carousel-text {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+  padding-left: 20px;
+}
+
+.carousel-text h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.carousel-text p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  padding: 10px 50px;
+  background-color: #D4AF37;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.cta-button:hover {
+  background-color: #005bb5;
+}
+
+
+
+
+
+.trust-title{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 10vh !important;
+}
+
+.trust-contanier{
+
+  min-height: 100vh !important;
+ 
+}
+
+.trust-row{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 80vh !important;  
+}
+
+.address-list{
+  min-height: 15vh;
+}
+
+.trust-img{
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  min-height: 80vh !important;  
+}
+
+.footer{
+  background-color: #ECE1FF !important;
+  color: #000000 !important;
+}
+
+.footer-container{
+  color: #000000 !important;
+}
+
+.linespace > li  {
+  line-height: 40px;
+}
+
+.text-link{
+  color: #000000;
+  text-decoration: none;
+}
+
+.fw-bold{
+  color: #000000 !important;
+}
+
+.trust-content{
+  display: flex;
+  align-items: flex-start;
+  justify-content:center;
+  flex-direction: column;
+}
+
+.trust-number{
+  color: #C5BA5A;
+  font-size: 36px;
+}
+
+.trust-para{
+  font-size: 20px;
+}
+
+.testimonial{
+  background-color: #FFFFF0;
+  width: 100%;
+}
+
+.text-dark{
+  text-decoration: none !important;
+}
+
+.copy-bg{
+  background-color: #FFFFF0;
+  min-height: 10vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content:center;
+}
+
+@media only screen and (max-width: 600px){
+  .hero-title{
+    font-size: 30px !important;
+    text-align: center;
+
+  }
+  .empty-space{
+    min-height: 10vh;
+    width: 100%;
+  }
+  .lead{
+font-size: 20px;
+text-align: center;
+  }
+  .hero-image{
+    width: 100%;
+    height: 100%;
+  }
+  .hero-content{
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .heroSection{
+    min-height: 200vh;
+  }
+
+  .homecard-container{
+    min-height: 170vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .card-col{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 50vh;
+  }
+  .homecard-row{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+  }
+  .carousel{
+    width: 100%;
+    
+  }
+
+  .trust-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .trust-img{
+    width: 100%;
+  }
+  .img-car{
+    width: 100%;
+    height: 100%;
+  }
+  .trust-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .Footer-col{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+text-align: center;
+    flex-direction: column;
+  }
+  .copy-row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+text-align: center;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .hero-title{
+    font-size: 30px !important;
+    text-align: center;
+    font-weight: bold;
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .heroSection{
+    min-height: 150vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .lead{
+    text-align: center;
+    font-size: 20px;
+  }
+  .card{
+    width: 100%;
+  }
+  .carousel{
+    max-height: 100vh;
+  }
+  .carousel-inner{
+    min-height: 80vh;
+  }
+  .carousel-img{
+    width: 100%;
+  }
+  .carousel-item{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+  }
+  .carousel-title{
+    text-align: center;
+    font-size: 20px;
+  }
+  .carousel-body-text{
+    text-align: center;
+  }
+  .carousel-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-title{
+    text-align: center !important;
+  }
+  .trust-contanier{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .trust-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .homecard-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+

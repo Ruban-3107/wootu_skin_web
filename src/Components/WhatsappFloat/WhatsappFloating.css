@@ -1,0 +1,40 @@
+/* src/components/WhatsAppWidgetWithOptions.css */
+
+/* Container for the WhatsApp widget */
+.whatsapp-widget-container {
+    position: fixed; /* Makes it float over other content */
+    bottom: 20px;    /* Distance from the bottom of the page */
+    right: 20px;     /* Distance from the right side of the page */
+    z-index: 9999;   /* Ensures it stays on top of all other content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;     /* Size of the WhatsApp button */
+    height: 60px;
+  }
+  
+  /* WhatsApp button styling */
+  .whatsapp-widget-container .whatsapp-button {
+    background-color: #25D366; /* WhatsApp green */
+    border-radius: 50%;        /* Makes it a circular button */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Add a shadow for emphasis */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect */
+  .whatsapp-widget-container .whatsapp-button:hover {
+    background-color: #20b858; /* Darker WhatsApp green on hover */
+  }
+  
+  /* WhatsApp icon styling */
+  .whatsapp-widget-container .whatsapp-button svg {
+    color: white; /* Icon color */
+    font-size: 32px; /* Icon size */
+  }
+  
