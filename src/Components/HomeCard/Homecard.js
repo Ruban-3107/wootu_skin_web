@@ -3,16 +3,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from './Homecard.module.css';
 import axios from 'axios';
 import 'animate.css/animate.min.css';
-import { Fade } from 'react-awesome-reveal';
+import FadeUpOnScroll from '../FadeUp/FadeUpOnScroll';
 import { strapi_url,token } from '../../common/utils';
 
 const HomeCard = () => {
   const [concerns, setConcerns] = useState([]);
+  const [Title, setTitle] = useState([]);
 
   const fetchData = async () => { 
     try {
       const response = await axios.get(`${strapi_url}/api/top-concerns?populate=*`);
       setConcerns(response.data.data); // Store the fetched data in state
+      setTitle(response.data.data);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -23,10 +25,12 @@ const HomeCard = () => {
   }, []);
 
   return (
+    
+<FadeUpOnScroll>
     <div className="container homecard-container">
-      <Fade duration={1500} delay={300} >
+     
       <h1 className='topCon-title'>Top Concerns</h1>
-      </Fade>
+     
       <div className="row homecard-row" >
         {concerns.map((concern) => (
           <div key={concern.id} className="col-lg-3 col-md-4 col-sm-12  card-col">
@@ -50,6 +54,7 @@ const HomeCard = () => {
         ))}
       </div>
     </div>
+    </FadeUpOnScroll>
   );
 };
 

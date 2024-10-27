@@ -1,0 +1,40 @@
+.location-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .loc-title{
+    text-align: center;
+  }
+
+  .line-con{
+    border: 3px solid black !important;
+    border-radius: 10px;
+    color: #000000;
+    background-color: #000000;
+  }
+
+
+
+  .location-card{
+    border: none;
+  }
+
+  .location-card:hover{
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+.location-title{
+    text-align: center;
+    color: #54318A;
+}
+
+
+.locations-add{
+    text-align: center;
+}
+
+.locations-contact{
+    text-align: center;
+    color: #54318A;
+}

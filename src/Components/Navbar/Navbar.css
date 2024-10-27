@@ -54,3 +54,34 @@ Navbar{
   box-shadow: none !important;
 }
 
+
+
+.navbar-link{
+  background-color: #B088EF;
+}
+
+
+
+.navbar-link > a{
+  background-color: #B088EF;
+}
+
+
+.navbar-link > a::after{
+  background-color: #B088EF;
+}
+
+.navbar-link > a::-moz-focus-inner{
+  background-color: #B088EF;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+  background-color: #B088EF !important; /* Replace #yourColor with the desired color */
+  color: #fff; /* Optional: Set the text color */
+}
+
+/* Change background color for the active dropdown item */
+.dropdown-item.active {
+  background-color: #B088EF !important; /* Replace #yourActiveColor with the desired active color */
+  color: #fff; /* Optional: Set the text color */
+}

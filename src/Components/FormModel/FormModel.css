@@ -1,0 +1,41 @@
+.form-Modal{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fromModal-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+min-height: 80vh;
+}
+
+.formZoho{
+    min-height: 80vh;
+}
+
+.formframe{
+    width: 100%;
+    min-height: 80vh;
+    background-color: #ffffff !important;
+}
+
+.em-space{
+    min-height: 10vh;
+}
+
+.form-image{
+
+    min-height: 80vh;
+}
+
+.backgroundSecBg{
+    background-color: #ffffff !important;
+}
+
+.backgroundBg{
+    background-color: #ffffff !important; 
+}

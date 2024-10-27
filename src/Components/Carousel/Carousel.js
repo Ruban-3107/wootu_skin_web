@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import FadeUpOnScroll from '../FadeUp/FadeUpOnScroll';
 import css from "./Carousel.css"
-
+import { strapi_url, token } from '../../common/utils';
 
 const Carousel = () => {
+
+  const [hero_text_1, setHero_text_1] = useState('');
+  const [hero_text_2, setHero_text_2] = useState('');
+  const [hero_image, setHero_image] = useState('');
   // Static data for each slide
   const slides = [
     {
@@ -15,7 +20,7 @@ const Carousel = () => {
       title: "Professional Skin care for Visible Results",
       body: "Achieve smoother, clearer, and healthier skin with our expert treatments.",
       imageUrl: "https://shorturl.at/48E60",
-      ctaText: "Book Now",
+      ctaText: "Book an Appointment",
       ctaLink: "#",
     },
     {
@@ -46,6 +51,7 @@ const Carousel = () => {
   };
 
   return (
+    <FadeUpOnScroll>
     <div className="carousel-wrapper">
       <div className="carousel-container">
         <Slider {...settings}>
@@ -68,6 +74,7 @@ const Carousel = () => {
         </Slider>
       </div>
     </div>
+    </FadeUpOnScroll>
   );
 };
 

@@ -6,12 +6,20 @@ Html,body{
 overflow-x: hidden;
 
   
+
+}
+
+.backgroundSecBg{
+  background-color: #ffffff !important;
+}
+
+.backgroundBg{
+  background-color: #ffffff !important; 
 }
 
 
 .heroSection {
   background: linear-gradient(103deg, #B088EF 7.53%, #D4B9FD 24.47%, #FFF 43.29%);
-
   font-family: 'Inria Sans', sans-serif;
   font-weight: 400;
 
@@ -104,6 +112,7 @@ text-decoration: none;
 /* global.css */
 
 .carousel-wrapper {
+  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -114,7 +123,7 @@ text-decoration: none;
 .carousel-container {
   width: 100%;
   max-width: 1200px;
-  background-color: #fffff0 !important;
+  background: linear-gradient(108deg, #B088EF 3.45%, #D4B9FD 17.38%, #FFF 34.14%) !important;
 }
 
 .carousel-slide {
@@ -127,6 +136,7 @@ text-decoration: none;
 .carousel-content {
   display: flex;
   width: 100%;
+  
 }
 
 .carousel-image {
@@ -147,6 +157,7 @@ text-decoration: none;
   flex-direction: column;
   flex: 1;
   padding-left: 20px;
+  background: linear-gradient(-108deg, #B088EF 19.45%, #D4B9FD 38.38%, #FFF 64.14%);
 }
 
 .carousel-text h2 {
@@ -161,7 +172,7 @@ text-decoration: none;
 
 .cta-button {
   padding: 10px 50px;
-  background-color: #D4AF37;
+  background: #8154C8;
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -169,7 +180,7 @@ text-decoration: none;
 }
 
 .cta-button:hover {
-  background-color: #005bb5;
+  background: #8154C8;
 }
 
 
@@ -220,7 +231,7 @@ text-decoration: none;
 }
 
 .testimonial{
-  background-color: #FFFFF0;
+ 
   width: 100%;
 }
 

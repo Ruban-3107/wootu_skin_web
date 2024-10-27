@@ -4,8 +4,10 @@ import Image5 from "../../Assets/image05.png";
 import Image6 from "../../Assets/image 06.png";
 import Image7 from "../../Assets/image 07.png";
 import Image8 from "../../Assets/image 08.png";
-import Image9 from "../../Assets/image 09.png"
+import Image9 from "../../Assets/image 09.png";
+import fadeUpOnScroll from "../FadeUp/FadeUpOnScroll";
 import css from "./Imagesec.css";
+import FadeUpOnScroll from '../FadeUp/FadeUpOnScroll';
 
 const ImageSection = () => {
   return (
@@ -20,7 +22,9 @@ const ImageSection = () => {
      </div>
       <div className="row">
         {/* Left Section (4 Columns) */}
+      
         <div className="col-md-5">
+        <FadeUpOnScroll>
         <div className="position-relative">
             <img
               src={Image5}
@@ -39,10 +43,14 @@ const ImageSection = () => {
 
             </div>
             </div>
+            </FadeUpOnScroll>
         </div>
+       
 
+      
         {/* Right Section (8 Columns) */}
         <div className="col-lg-6">
+        <FadeUpOnScroll>
           <div className="row">
             {/* First Row (Full width Image) */}
             <div className="col-12 mb-3">
@@ -130,7 +138,9 @@ const ImageSection = () => {
             </div>
             </div>
           </div>
+          </FadeUpOnScroll>
         </div>
+       
       </div>
     </div>
   );

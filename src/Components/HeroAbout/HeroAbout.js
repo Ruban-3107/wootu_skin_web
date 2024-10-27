@@ -4,6 +4,7 @@ import Herimg from "../../Assets/Group 19.png";
 import Styles from "./HeroAbout.css";
 import axios from 'axios';
 import { strapi_url } from "../../common/utils";
+import FadeUpOnScroll from "../FadeUp/FadeUpOnScroll";
 
 export default function HeroAbout(){
 // async function fetchData(){
@@ -19,8 +20,9 @@ export default function HeroAbout(){
 //    fetchData()
 //   },[])
     return(
-        <section className="hero-section container-fluid py-5">
-            <div className="container">
+      <FadeUpOnScroll>
+        <section className="heroSection container-fluid py-5">
+            <div className="container hero-section">
         <div className="row HeroAbout-row">
           <div className="col-md-5 text-center text-md-left">
             <h1 className="display-4 font-weight-bold">About Us</h1>
@@ -40,5 +42,6 @@ export default function HeroAbout(){
         </div>
         </div>
       </section>
+      </FadeUpOnScroll>
     )
 }

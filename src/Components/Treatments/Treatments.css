@@ -3,20 +3,101 @@
     margin-bottom: 10px;
     padding-left: 20px;
   }
+
+  .hero-btn{
+ 
+    background: #8154C8;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+  }
+
+  .hero-btn > a {
+    font-size: 20px;
+  }
+
+
+  li{
+    list-style: none;
+  }
+
+  .title-treatment{
+    text-align: center;
+    color: #000;
+font-family: "Inria Sans";
+font-size: 48px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+min-height: 20vh;
+  }
+/* CSS for carousel */
+.carousel-item img {
+  max-height: 500px; /* Set a max height for larger screens */
+  object-fit: cover; /* Keep image aspect ratio and fit it to container */
+}
+
+@media (max-width: 576px) {
+  .carousel-item img {
+    max-height: 300px; /* Adjust height for mobile screens */
+  }
+}
+
+  .benefits_row{
+    min-height: 70vh;
+  }
+
+  .form-popup{
+    width: 100vw;
+    min-height: 80vh;
+  }
+
+  .popup-image{
+max-height:80vh;
+  }
+
+  .backgroundBg {
+    background: transparent !important;
+  }
+  .frompopup-row{
+    width: 100%;
+    min-height:80vh;
+  }
+
+  .list-text{
+    color: #000;
+font-family: "Inria Sans";
+font-size: 26px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+line-height: 50px;
+  }
+
+  .lead2{
+    font-size: 24px;
+  }
   
+
+  .hero-btn:hover{
+    background: #8154C8;
+  }
   .benefits-list li::before {
     content: '';
-    width: 10px;
-    height: 10px;
-    background-color: #007bff; /* Customize color here */
+    width: 12px;
+    height: 12px;
+    background-color: #8154C8; /* Customize color here */
     border-radius: 50%;
     position: absolute;
     left: 0;
-    top: 5px;
+    top: 20px;
   }
   
   .video-card {
     position: relative;
+    height: 600px;
   }
   
   .play-button-overlay {
@@ -26,6 +107,63 @@
     transform: translate(-50%, -50%);
     font-size: 2rem;
     color: white;
+
     opacity: 0.7;
+  }
+  
+  .treatment-carousel{
+    width: 100%;
+    min-height: 50vh;
+  }
+
+  .before-after-carousel{
+    width: 100%;
+    min-height: 50vh;
+  }
+
+
+  .carousel-img{
+    width: 100%;
+    height: 50vh;
+  }
+
+  .carousel-img > img {
+    object-fit: contain;
+  }
+
+  .video-card {
+    position: relative;
+    overflow: hidden;
+    background-color: #ffffff;
+  }
+  
+  .play-pause-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0,1);
+    cursor: pointer;
+  }
+  
+  .play-pause-icon {
+    font-size: 3rem;
+    opacity: 0.8;
+  }
+  
+  .play-icon::before {
+    content: '▶️'; /* Play icon */
+    color: #8154C8 !important;   /* Set play icon color */
+  }
+  
+  .pause-icon::before {
+    content: '⏸️'; /* Pause icon */
+    border-radius: 50%;
+    color: #8154C8 !important;     /* Set pause icon color */
+  }
+  
+  .play-pause-overlay:hover .play-pause-icon {
+    opacity: 1;
   }
   

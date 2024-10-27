@@ -91,7 +91,7 @@ const CustomNavbar = () => {
           <Nav.Link>
             <NavDropdown title="Sliming" id="sliming-dropdown">
             {slimming?.map((treatment) => (
-          <NavDropdown.Item key={treatment} onClick={() => handleNavigate(treatment)}>
+          <NavDropdown.Item className='navbar-link' key={treatment} onClick={() => handleNavigate(treatment)}>
             {treatment}
           </NavDropdown.Item>
         ))}
@@ -115,7 +115,7 @@ const CustomNavbar = () => {
             <Nav.Link href="/About">About</Nav.Link>
 
             {/* Contact */}
-            <Nav.Link href="#">Contact</Nav.Link>
+            <Nav.Link href="/Contact">Contact</Nav.Link>
           </Nav>
         </Navbar.Collapse>
 

@@ -3,11 +3,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Image3 from "../../Assets/image 03.png";
 import Image4 from "../../Assets/image 04.png";
 import css from "./Whoweare.css";
+import FadeUpOnScroll from '../FadeUp/FadeUpOnScroll';
 
 export default function Whoweare() {
   return (
     <section className="conatiner who-we-are my-5">
       {/* Section Heading */}
+      <FadeUpOnScroll>
       <div className="text-center mb-4">
        
         <h2 className="d-inline-block">
@@ -16,9 +18,10 @@ export default function Whoweare() {
 </svg></span> Who We Are</span>
         </h2>
       </div>
+      </FadeUpOnScroll>
 
 <div className='container'>
-      {/* Row 1 - Image Left, Content Right */}
+<FadeUpOnScroll>
       <div className="row align-items-center ">
         <div className="col-md-6">
           <img
@@ -35,8 +38,8 @@ export default function Whoweare() {
           </p>
         </div>
       </div>
-
-      {/* Row 2 - Content Left, Image Right */}
+</FadeUpOnScroll>
+<FadeUpOnScroll>
       <div className="row align-items-center mb-4">
         <div className="col-md-6">
         <p className='con-text'>
@@ -52,6 +55,7 @@ export default function Whoweare() {
           />
         </div>
       </div>
+      </FadeUpOnScroll>
       </div>
     </section>
   );

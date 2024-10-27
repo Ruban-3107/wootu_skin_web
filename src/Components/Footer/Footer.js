@@ -146,6 +146,25 @@ const Footer = () => {
           </Col>
         </Row>
       </Container>
+<hr/>
+      <Container>
+<div className='row d-flex align-item-center justify-content-center'>
+  <div className='col-lg-6 align-item-center'>
+ <p>Copyright
+2024.
+All rights reserved.</p> 
+  </div>
+  <div className='col-lg-6 d-flex align-item-center justify-content-end'>
+ <p>Privacy Police |
+ Terms Of Use</p> 
+  </div>
+
+
+</div>
+
+
+      </Container>
+
     </footer>
   );
 };

@@ -5,3 +5,8 @@
 .footer{
     background-color: #ECE1FF !important;
 }
+
+hr{
+border: 10px solid #ffffff 1;
+    color: #fff;
+}
