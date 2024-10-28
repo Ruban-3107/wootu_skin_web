@@ -1,4 +1,4 @@
 
 export const token = "28aea6c6cf58b8577c220b246f7a977cb3c96ff342f1351f52813ea3cf3481d602f5a6f5d7bec92e3558dfa919ff57a76f39bbad412823a973a00f49c4015843d600716e0e6e4b3ea2ed9fbc8dbe63b8fb65523c954eab3cf4bd8ca45b3518bf1aca6da57d84d26b5c0a6e30d99da18a522e58d3a3d6a3178df12a97941110dc"
-export const strapi_url = 'http://localhost:1337'
+export const strapi_url = 'https://strapi-wootu-skin.onrender.com'
 export const whatsappMobile  = 'https://wa.me/7550248451'
