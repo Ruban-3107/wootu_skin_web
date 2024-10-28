@@ -7,10 +7,10 @@ import Topservice from "../Components/Topservices/Topservice";
 import TrustContent from "../Components/TrustContent/TrustContent";
 import Testimonials from "../Components/Testimonial/Testimonial";
 
-export default function Home(){
+export default function Home(data){
   return(
     <>
-    <HeroSection/>
+    <HeroSection data={data}/>
     <HomeCard/>
 <Carousel/>
 <Topservice/>
