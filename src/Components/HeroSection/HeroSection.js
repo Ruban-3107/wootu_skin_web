@@ -14,9 +14,9 @@ const HeroSection = (data) => {
           {/* Left Side - Text */}
           <div className="col-lg-6 col-md-12 mb-4 mb-lg-0 hero-content">
             <div className="empty-space"></div>
-             <h1 className="hero-title">{data.data.datahero_text_1}</h1>
+             <h1 className="hero-title">{data.data.data.hero_text_1}</h1>
             <p className="lead">{data.data.data.hero_text_2}</p>
-           {<button className='hero-btn w-60'><a href='#'>Book an appointment</a></button> }
+           {<button className='hero-btn'><a href='#'>Book an Appointment</a></button> }
           </div>
 
           {/* Right Side - Image */}

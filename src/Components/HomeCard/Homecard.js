@@ -45,7 +45,7 @@ const HomeCard = () => {
                 height={500} // Adjust height as needed
               />
               <div className={styles.overlay}>
-                <h3 className={styles.overlayText}>{concern.name}</h3> {/* Use name from API */}
+                <h2 className={styles.overlayText}>{concern.name}</h2> {/* Use name from API */}
                 <button className={styles.ctaButton}>Book Now</button>
               </div>
             </div>

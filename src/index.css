@@ -36,19 +36,19 @@ overflow-x: hidden;
   display: flex;
 }
 .hero-btn{
-  width: 60%;
+  width: 50%;
   min-height: 7vh;
   border-radius: 12px;
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
   border: none;
-padding: 10px;
+
   background-color: #8154C8;
  
 }
 .hero-btn > a {
   color: #fff;
-  font-size: 28px;
-  padding: 20px;
+  font-size: 30px;
+ 
   font-weight: medium;
 text-decoration: none;
 }
