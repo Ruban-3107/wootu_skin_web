@@ -1,21 +1,20 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-// components/WhyYouCanTrustUs.js
-import React,{useState,useEffect} from 'react';
-import css from "./TrustContent.module.css"
+import React, { useState, useEffect } from 'react';
+import css from "./TrustContent.module.css";
 import axios from 'axios';
 import { strapi_url } from '../../common/utils';
-
+import fallbackImage from '../../Assets/trust.png'; // Import your fallback local image
 
 const TrustContent = () => {
-
   const [trust, setTrust] = useState([]);
+  const [imageSrc, setImageSrc] = useState(fallbackImage); // State to hold the image source
 
   const fetchTrust = async () => {
     try {
       const response = await axios.get(`${strapi_url}/api/trusts?populate=*`);
-      console.log(response.data.data);
-      
       setTrust(response.data.data);
+      const imgSrc = await processImage(response.data.data[0]?.image?.url);
+      setImageSrc(imgSrc); // Set the processed image source
     } catch (error) {
       console.error('Error fetching services:', error);
     }
@@ -24,33 +23,60 @@ const TrustContent = () => {
   useEffect(() => {
     fetchTrust();
   }, []);
+
+  const getImageSrc = async (url, fallback) => {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error('Image not found');
+      }
+      return url;
+    } catch {
+      return fallback; // Return the fallback local image if the fetch fails
+    }
+  };
+
+  const processImage = async (imageUrl) => {
+    return await getImageSrc(`${strapi_url}${imageUrl}`, fallbackImage);
+  };
+
+  if (trust.length === 0) return null; // Return null if trust data is not available
+
   return (
-    trust.length > 0  && <section className="container py-5 trust-contanier">
-    <div className="trust-title">
-    <h2 >{trust[0]?.title}</h2>
-    </div>
-  <div className="row align-items-center trust-row">
-    {/* Left Side: Image */}
-    <div className="col-md-12 col-lg-6 trust-img">
-      <img
-        src={`${strapi_url}${trust[0]?.image.url}`} // Replace with your image path
-        alt="Why you can trust us"
-        width={500} // Adjust width
-        height={500} // Adjust height
-    className="img-car"
-      />
-    </div>
-    {/* Right Side: Content */}
-    <div className="col-md-12 col-lg-5">
-      
-      <div className="trust-content"><strong className="trust-number">{trust[0]?.reviews}</strong> <p className="trust-para"> reviews shared by Wootu members</p></div>
-      <hr />
-      <div className="trust-content"><strong className="trust-number">{trust[0]?.doctor_answered}</strong> <p className="trust-para"> patient questions answered by doctors</p></div>
-      <hr />
-      <div className="trust-content"><strong className="trust-number">{trust[0]?.people_satisfactions}</strong> <p className="trust-para"> of members say wootu helps them understand procedures</p></div>
-    </div>
-  </div>
-</section>
+    <section className="container py-5 trust-container">
+      <div className="trust-title">
+        <h2>{trust[0]?.title}</h2>
+      </div>
+      <div className="row align-items-center trust-row">
+        {/* Left Side: Image */}
+        <div className="col-md-12 col-lg-6 trust-img">
+          <img
+            src={imageSrc}
+            alt="Why you can trust us"
+            width={500} // Adjust width
+            height={500} // Adjust height
+            className="img-car"
+          />
+        </div>
+        {/* Right Side: Content */}
+        <div className="col-md-12 col-lg-5">
+          <div className="trust-content">
+            <strong className="trust-number">{trust[0]?.reviews}</strong>
+            <p className="trust-para"> reviews shared by Wootu members</p>
+          </div>
+          <hr />
+          <div className="trust-content">
+            <strong className="trust-number">{trust[0]?.doctor_answered}</strong>
+            <p className="trust-para"> patient questions answered by doctors</p>
+          </div>
+          <hr />
+          <div className="trust-content">
+            <strong className="trust-number">{trust[0]?.people_satisfactions}</strong>
+            <p className="trust-para"> of members say Wootu helps them understand procedures</p>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 

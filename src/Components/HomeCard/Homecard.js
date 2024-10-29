@@ -62,9 +62,9 @@ const HomeCard = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [concerns]);
 
-  if (loading) {
-    return <div>Loading...</div>; // Optionally replace with a spinner or loading component
-  }
+  // if (loading) {
+  //   return <div>Loading...</div>; // Optionally replace with a spinner or loading component
+  // }
 
   return (
     <FadeUpOnScroll>
