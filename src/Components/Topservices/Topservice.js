@@ -64,9 +64,9 @@ const Topservice = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [services]);
 
-  if (loading) {
-    return <div>Loading...</div>; // Optionally replace with a spinner or loading component
-  }
+  // if (loading) {
+  //   return <div>Loading...</div>; // Optionally replace with a spinner or loading component
+  // }
 
   return (
     <div className="container homecard-container">
