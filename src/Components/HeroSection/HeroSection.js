@@ -5,6 +5,7 @@ import { strapi_url } from '../../common/utils';
 import 'animate.css/animate.min.css';
 
 const HeroSection = (data) => {
+  console.log("data?.data?.data?.hero_image:::",data?.data?.data?.hero_image)
   return (
 (data && <FadeUpOnScroll>
     <section   className="heroSection d-flex align-items-center">
@@ -20,17 +21,28 @@ const HeroSection = (data) => {
           </div>
 
           {/* Right Side - Image */}
-          {data?.data?.data?.hero_image && (
-            <div className="col-lg-6 col-md-12 hero-image-section ">
-              <img
-                src={`${strapi_url}${data?.data?.data?.hero_image.url}`} // Replace with your image path
-                alt="Hero"
-                className="img-fluid hero-image" // Bootstrap class for responsive images
-                width={400}
-                height={300}
-              />
-            </div>
-          )}
+          {data?.data?.data?.hero_image ? (
+  <div className="col-lg-6 col-md-12 hero-image-section">
+    <img
+      src={`${strapi_url}${data.data.data.hero_image.url}`} // URL for the image
+      alt="Hero"
+      className="img-fluid hero-image" // Bootstrap class for responsive images
+      width={400}
+      height={300}
+    />
+  </div>
+) : (
+  <div className="col-lg-6 col-md-12 hero-image-section">
+    <img
+      src="../Assets/hero-section.png" // Local path for the image
+      alt="Hero"
+      className="img-fluid hero-image" // Bootstrap class for responsive images
+      width={400}
+      height={300}
+    />
+  </div>
+)}
+
         </div>
       </div>
     </section>
