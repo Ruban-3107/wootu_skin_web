@@ -4,7 +4,7 @@ import { Container, Row, Col, Carousel, Button, Modal, } from 'react-bootstrap';
 import { FaPlay } from 'react-icons/fa';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
-
+import contactImg from "../../Assets/contact.png"
 import { strapi_url } from '../../common/utils';
 import VideoPlayer from '../VideoPlayer/Videoplayer';
 
@@ -19,15 +19,14 @@ export default function FormModal(){
       </Row>
           <Row className="g-0 fromModal-row">
             {/* Left Side Image */}
-            <Col xs={12} md={6} className="d-flex align-items-center form-image">
+            <Col xs={12} md={5} className="d-flex align-items-center form-image w-80">
               <img
-                src="https://bit.ly/3CbPkKg"
+                src={contactImg}
                 alt="Booking"
                 className="form-image"
                 style={{ maxHeight: '100%', objectFit: 'cover' }}
               />
             </Col>
-
 
             {/* Right Side iFrame */}
             <Col xs={12} md={6} className='formZoho'>

@@ -4,26 +4,102 @@ import { Container, Row, Col, Carousel, Button, Modal, } from 'react-bootstrap';
 import { FaPlay } from 'react-icons/fa';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
+import contactImg from "../../Assets/contact.png"
+import Hydrafacial from "../../Assets/Treatments/HydraFacial.jpg";
+import chemicalPeel from "../../Assets/Treatments/ChemicalPeel.jpg";
+import carbon from "../../Assets/Treatments/CarbonLaser.jpg";
+import photofacial from "../../Assets/Treatments/photofacial.jpg";
+import glycolic from "../../Assets/Treatments/glycoliepeel.jpg";
+import nano from "../../Assets/Treatments/nanopeel.jpg";
+import light from "../../Assets/Treatments/ChemicalPeel.jpg";
+import combination from "../../Assets/Treatments/combinationpeel.jpg";
+import yellow from "../../Assets/Treatments/yellowpeel.jpg";
+import salicylie from "../../Assets/Treatments/saylicpeel.jpg";
+import glutathione from "../../Assets/Treatments/glycoliepeel.jpg";
+import upperlip from "../../Assets/Treatments/underlip.png";
+import chin from "../../Assets/Treatments/chinhair.jpg";
+import underarms from "../../Assets/Treatments/underarm.png";
+import fullhand from "../../Assets/Treatments/fullhand.jpg";
+import fulleg from "../../Assets/Treatments/full-leg.jpg";
+import fullbody from "../../Assets/Treatments/full-body.jpg";
 import Image from "../../Assets/image 01.png";
+import Bikeni from "../../Assets/Treatments/bikeni.jpg";
+import sidelocks from "../../Assets/Treatments/side-locks.jpg";
+import bodylhr from "../../Assets/Treatments/3-body.jpg";
+import lymphatic from "../../Assets/Treatments/lymphatic.jpg";
+import abdomen from "../../Assets/Treatments/abdomen.png";
+import backtucks from "../../Assets/Treatments/back-tucks.png";
 import { strapi_url } from '../../common/utils';
 import VideoPlayer from '../VideoPlayer/Videoplayer';
 const Treatments = () => {
-
   const [show, setShow] = useState(false);
-
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
 
-
   const [hero_section_image, setHero_image] = useState('');
-  const location = useLocation();
-  const { label } = location?.state || {}
-  const [data,setData] = useState();
-  console.log({label});
-
-
   const [benefits_image, setBenefits_image] = useState('');
   const [before_after_carousel, setBefore_after_carousel] = useState('');
+  const location = useLocation();
+  const { label } = location?.state || {};
+  const [data, setData] = useState();
+  console.log({ label });
+
+  const localImages = {
+    "Hydra Facial": Hydrafacial,
+    "Chemical Peel": chemicalPeel,
+    "Carbon Laser": carbon,
+    // Add other treatment local images as needed
+  };
+
+  const condition = (label) => {
+    switch (label) {
+      case 'Hydra Facial':
+        return '/api/hydra-facials';
+      case 'Carbon Laser':
+        return '/api/carbon-lasers';
+      default:
+        return '/api/hydra-facials';
+    }
+  };
+
+  const checkImageSrc = async (url, fallback) => {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error('Image not found');
+      return url;
+    } catch {
+      return fallback; // Return fallback local image if fetch fails
+    }
+  };
+
+  const fetchServices = async () => {
+    try {
+      const response = await axios.get(`${strapi_url}${condition(label)}?populate=*`);
+      const fetchedData = response.data.data;
+
+      // Set data and images with fallback logic
+      setData(fetchedData);
+      setHero_image(await checkImageSrc(
+        `${strapi_url}${fetchedData[0]?.hero_section_image?.url}`, 
+        localImages[label]
+      ));
+      setBenefits_image(await checkImageSrc(
+        `${strapi_url}${fetchedData[0]?.benefits_image?.url}`, 
+        localImages[label]
+      ));
+      setBefore_after_carousel(await checkImageSrc(
+        `${strapi_url}${fetchedData[0]?.before_after_carousel?.url}`, 
+        localImages[label]
+      ));
+    } catch (error) {
+      console.error('Error fetching services:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchServices();
+  }, []);
+
 
   const videoSources = [
     "https://youtube.com/shorts/DjYasFr-iz4?si=dwIeidq3SdeXuyls",  // Video 1
@@ -33,34 +109,8 @@ const Treatments = () => {
   ];
 
   
-  const condition =(label)=>{
-    switch (label){
-    case 'Hydra Facial':
-      return '/api/hydra-facials';
 
-      case 'Carbon Laser':
-        return '/api/carbon-lasers';
-      default:
-      return '/api/hydra-facials';
-    }
-  }
-
-  const fetchServices = async () => {
-    try {
-      const response = await axios.get(`${strapi_url}${condition(label)}?populate=*`);
-      setData(response.data.data);
-      console.log("response::",response.data.data);
-      setHero_image(response?.data?.data[0].hero_section_image.url);
-      setBenefits_image(response?.data?.data[0].benefits_image.url);
-      setBefore_after_carousel(response?.data?.data[0].before_after_carousel.url);
-    } catch (error) {
-      console.error('Error fetching services:', error);
-    }
-  };
-
-  useEffect(() => {
-    fetchServices();
-  }, []);
+  
 
   return (
     
@@ -193,7 +243,7 @@ const Treatments = () => {
             {/* Left Side Image */}
             <Col xs={12} md={6} className="d-flex align-items-center popup-image">
               <img
-                src="https://bit.ly/3CbPkKg"
+                src={contactImg}
                 alt="Booking"
                 className="img-fluid w-100"
                 style={{ maxHeight: '100%', objectFit: 'cover' }}

@@ -1,5 +1,5 @@
 import React from 'react';
-import OopsImg from '../../Assets/trust.png';
+import OopsImg from '../../Assets/3544899.jpg';
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class ErrorBoundary extends React.Component {
     if (this.state.hasError) {
       return (
         <>
-          <img src={OopsImg} alt='oopsImg' className='w-100' />
+          <img src={OopsImg} alt='oopsImg' className='' width="400px" />
           <h2 className='text-center'>
             {this.props.message || "We're sorry, something went wrong. Please try again later."}
           </h2>
