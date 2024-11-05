@@ -11,44 +11,69 @@ import TreatmentPage from './pages/TreatmentPage';
 import Loader from './Components/Loader/Loader';
 import axios from 'axios';
 import { strapi_url, } from '../src/common/utils';
+import ErrorBoundary from './Components/ErrorBoundary/ErrorBoundary';
+import fallbackImage from './Assets/Header.png';
 function App() {
   const [isContentLoaded, setIsContentLoaded] = useState(false);
   const location = useLocation();
   const [heroData,setHeroData] = useState('')
+  const getImageSrc = async (url, fallback) => {
+    console.log({url, fallback});
+    try {
+      if(!url) return fallback;
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error('Image not found');
+      }
+      return url;
+    } catch {
+      return fallback; // Return the fallback local image if the fetch fails
+    }
+  };
+
+  const processImage = async (imageUrl) => {
+    return await getImageSrc(`${strapi_url}${imageUrl}`, fallbackImage);
+  };
+
+  const fetchData = async () => {
+    try {
+      setIsContentLoaded(false); 
+      let response = await axios.get(`${strapi_url}/api/landing-pages?populate=*`);
+      console.log("check:::",response?.data?.data[0].hero_image.url);
+      const imgSrc = await processImage(response.data.data[0]?.hero_image.url);
+      console.log({imgSrc});
+      if (response.data.data[0]) {
+        response.data.data[0].hero_image.url = imgSrc; // Now you can safely assign
+      } 
+      setHeroData(response?.data?.data[0]);
+      // setIsContentLoaded(true);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }finally {
+      setIsContentLoaded(true); // Hide loader after data is fetched
+    }
+  };
 
   useEffect(() => {
-    // Start loading content on route change
-    setIsContentLoaded(false);
-
-   try{
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(`${strapi_url}/api/landing-pages?populate=*`);
-        console.log(response?.data?.data[0]);
-        setHeroData(response?.data?.data[0]);
-        setIsContentLoaded(true);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-    fetchData();
-
-   }catch(err){
-console.log(err);
-   }
    
+   
+    fetchData();
+   
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
 
-  
+  // Don't render anything until content is loaded
+  if (!isContentLoaded) {
+    return <Loader />; // Only show the loader
+  }
 
   
   return (
     <div className="App">
-      {!isContentLoaded ? (
-        <Loader />
-      ) : (
+      
         <>
-          <CustomNavbar />
+        <div className="App">
+        {isContentLoaded && <CustomNavbar />}
           <div className="content-wrapper">
             <Routes>
               <Route path="/" element={<Navigate to="/home" replace />} />
@@ -58,19 +83,21 @@ console.log(err);
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </div>
-          <WhatsAppButton />
-          <Footer />
+          {isContentLoaded && <WhatsAppButton />}
+        { isContentLoaded && <Footer />}
+          </div>
         </>
-      )}
+      
     </div>
   );
 }
 
 function AppWrapper() {
-  return (
+  return (  <ErrorBoundary>
     <Router>
       <App />
     </Router>
+    </ErrorBoundary>
   );
 }
 
