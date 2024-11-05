@@ -21,27 +21,25 @@ const HeroSection = (data) => {
           </div>
 
           {/* Right Side - Image */}
-          {data?.data?.data?.hero_image ? (
-  <div className="col-lg-6 col-md-12 hero-image-section">
+          <div className="col-lg-6 col-md-12 hero-image-section">
+  {data?.data?.data?.hero_image?.url ? (
     <img
-      src={`${strapi_url}${data.data.data.hero_image.url}`} // URL for the image
+      src={`${strapi_url}${data.data.data.hero_image.url}`} // URL for the image from API
       alt="Hero"
       className="img-fluid hero-image" // Bootstrap class for responsive images
       width={400}
       height={300}
     />
-  </div>
-) : (
-  <div className="col-lg-6 col-md-12 hero-image-section">
+  ) : (
     <img
-      src="../Assets/hero-section.png" // Local path for the image
+      src="../../Assets/hero-section.png" // Local path for fallback image
       alt="Hero"
       className="img-fluid hero-image" // Bootstrap class for responsive images
       width={400}
       height={300}
     />
-  </div>
-)}
+  )}
+</div>
 
         </div>
       </div>

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+
 import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import CustomNavbar from './Components/Navbar/Navbar';
 import Home from './pages/Home';
