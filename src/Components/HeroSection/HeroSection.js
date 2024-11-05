@@ -16,12 +16,12 @@ const HeroSection = (data) => {
             <div className="empty-space"></div>
              <h1 className="hero-title">{data.data.data.hero_text_1}</h1>
             <p className="lead">{data.data.data.hero_text_2}</p>
-           {<button className='hero-btn w-60'><a href='#'>Book an appointment</a></button> }
+           {<button className='hero-btn'><a href='#'>Book an Appointment</a></button> }
           </div>
 
           {/* Right Side - Image */}
-          {data?.data?.data?.hero_image ? (
-  <div className="col-lg-6 col-md-12 hero-image-section">
+          <div className="col-lg-6 col-md-12 hero-image-section">
+  {data?.data?.data?.hero_image?.url ? (
     <img
       src={`${data.data.data.hero_image.url}`} // URL for the image
       alt="Hero"
@@ -29,18 +29,16 @@ const HeroSection = (data) => {
       width={400}
       height={300}
     />
-  </div>
-) : (
-  <div className="col-lg-6 col-md-12 hero-image-section">
+  ) : (
     <img
-      src="../Assets/hero-section.png" // Local path for the image
+      src="../../Assets/hero-section.png" // Local path for fallback image
       alt="Hero"
       className="img-fluid hero-image" // Bootstrap class for responsive images
       width={400}
       height={300}
     />
-  </div>
-)}
+  )}
+</div>
 
         </div>
       </div>

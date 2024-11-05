@@ -183,7 +183,7 @@ const Treatments = () => {
       {/* Final CTA Button */}
       <div className="text-center my-5 d-flex align-item-center justify-content-center ">
         <div className='w-50'>
-        <Button variant="primary" className='hero-btn' size="lg">Book an Appointment</Button>
+        <Button variant="primary" className='hero-btn' size="lg"  onClick={handleShow}>Book an Appointment</Button>
       </div>
       </div>
 

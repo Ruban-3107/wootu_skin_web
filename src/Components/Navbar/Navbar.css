@@ -1,5 +1,5 @@
 .nav-cta{
-  width: 10vw;
+  width: 15vw;
   padding: 10px;
   background-color: #fff;
   border-radius: 2px solid #B088EF !important;
@@ -84,4 +84,91 @@ Navbar{
 .dropdown-item.active {
   background-color: #B088EF !important; /* Replace #yourActiveColor with the desired active color */
   color: #fff; /* Optional: Set the text color */
+}
+
+/* Navbar.css */
+
+.navbar-dropdown-custom .dropdown-menu {
+  position: absolute;
+  top: 100%; /* Position below the parent link */
+  left: 0;
+  min-width: 200px; /* Set a minimum width if desired */
+  padding: 10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-dropdown-custom .dropdown-item {
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+
+.navbar-dropdown-full-width .dropdown-menu{
+  width: 100vw;
+  left: 0;
+}
+
+/* Navbar styles for mobile */
+.navbar-custom .nav-link {
+  font-size: 16px;
+}
+
+.navbar-custom .nav-cta, .navbar-custom .nav-cta2 {
+  width: 100%;
+  text-align: center;
+}
+
+/* For larger screens */
+@media (min-width: 992px) {
+  .navbar-custom .nav-cta, .navbar-custom .nav-cta2 {
+    width: auto;
+  }
+}
+
+
+/* Navbar Custom Styles */
+
+/* Ensure the Nav uses flex to distribute items evenly */
+.nav-items {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Custom class for each nav item to ensure equal width */
+.nav-item-custom {
+  flex: 1;
+  text-align: center;
+}
+
+/* Adjust dropdown items if necessary */
+.dropdown-item-custom {
+  text-align: left; /* Align dropdown items to the left for better readability */
+}
+
+/* Style for the phone link to remove default link styling */
+.phone-link {
+  color: white;
+  text-decoration: none;
+}
+
+/* Ensure the phone icon and text are aligned */
+.phone-link .svg-inline--fa {
+  margin-right: 5px;
+}
+
+/* Optional: Adjust button sizes and spacing */
+.nav-cta, .nav-cta2 {
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .nav-cta, .nav-cta2 {
+    width: auto;
+  }
 }
