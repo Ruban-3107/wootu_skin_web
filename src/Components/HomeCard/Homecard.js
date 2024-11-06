@@ -38,6 +38,7 @@ const HomeCard = () => {
   // Function to check if an image URL is valid
   const checkImageSrc = async (url, fallback) => {
     try {
+      if(!url) return fallback;
       const response = await fetch(url);
       if (!response.ok) throw new Error('Image not found');
       return url;

@@ -42,12 +42,13 @@ const Treatments = () => {
   const location = useLocation();
   const { label } = location?.state || {};
   const [data, setData] = useState();
-  console.log({ label });
+  console.log({ label});
 
   const localImages = {
     "Hydra Facial": Hydrafacial,
     "Chemical Peel": chemicalPeel,
     "Carbon Laser": carbon,
+    "Photo Facial":photofacial
     // Add other treatment local images as needed
   };
 
@@ -57,6 +58,10 @@ const Treatments = () => {
         return '/api/hydra-facials';
       case 'Carbon Laser':
         return '/api/carbon-lasers';
+      case 'Chemical Peel':
+        return '/api/chemical-peels' 
+      case 'Photo Facial':
+        return '/api/photo-facials'   
       default:
         return '/api/hydra-facials';
     }
@@ -122,7 +127,7 @@ const Treatments = () => {
 
           <Row className="align-items-center">
             <Col md={6}>
-              <img src={`${strapi_url}${hero_section_image}`} alt="Hero Image" className="img-fluid" />
+              <img src={hero_section_image} alt="Hero Image" className="img-fluid" />
             </Col>
             <Col md={6}>
               <h1 className="hero-title">{data[0].hero_section_header}
@@ -151,7 +156,7 @@ const Treatments = () => {
 
           <Row className="align-items-center benefits_row">
             <Col md={6}>
-              <img src={`${strapi_url}${benefits_image}`} alt="Benefits Image" className="img-fluid" />
+              <img src={benefits_image} alt="Benefits Image" className="img-fluid" />
             </Col>
             <Col md={6}>
               <ul className="benefits-list">
