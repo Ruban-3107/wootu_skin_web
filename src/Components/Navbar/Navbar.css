@@ -1,5 +1,70 @@
-.nav-cta{
-  width: 15vw;
+.navbar {
+  background-color: white !important;
+  position: relative;
+  box-shadow: none !important;
+}
+
+.nav-link {
+  /* position: relative; */
+  font-size: 20px;
+  color: #000;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #B088EF;
+}
+
+.nav-link:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  width: 70px;
+  background-color: #B088EF;
+  transition: width 0.3s ease;
+}
+
+
+
+/* Mega menu general styling */
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%; /* Adjusted for smaller screens */
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  z-index: 1000;
+}
+
+
+.mega-menu h3 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.mega-menu-item {
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mega-menu-item:hover {
+  background-color: #f8f9fa;
+  color: #007bff;
+}
+
+.nav-cta {
+  width: 10vw;
   padding: 10px;
   background-color: #fff;
   border-radius: 2px solid #B088EF !important;
@@ -7,168 +72,65 @@
   color: #B088EF;
   font-size: 18px;
   font-weight: bold;
+  transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
-.nav-cta2{
+.nav-cta:hover {
+  background-color: #B088EF;
+  color: #fff;
+}
+
+.nav-cta2 {
   width: 15vw;
   padding: 10px;
   background-color: #b088ef !important;
   border-radius: 2px solid #B088EF !important;
   border-color: #B088EF !important;
-  color: #B088EF;
+  color: #fff;
   font-size: 18px;
   font-weight: bold;
+  white-space: nowrap;
 }
 
-.nav-cta:hover{
-  background-color: #B088EF;
+.nav-cta2 > a {
   color: #fff;
-}
-
-navbar{
-  background-color: #fff !important;
-}
-
-.fa-phone{
-  color: #B088EF !important;
-}
-
-.nav-cta2 > a{
-  color: #fff;
-  text-decoration:none;
-}
-
-
-.nav-link{
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 90%;
-  font-size: 20px;
-  color: #000;
-  font-weight: 600;
-}
-
-
-Navbar{
-  box-shadow: none !important;
-}
-
-
-
-.navbar-link{
-  background-color: #B088EF;
-}
-
-
-
-.navbar-link > a{
-  background-color: #B088EF;
-}
-
-
-.navbar-link > a::after{
-  background-color: #B088EF;
-}
-
-.navbar-link > a::-moz-focus-inner{
-  background-color: #B088EF;
-}
-
-.dropdown-item:hover, .dropdown-item:focus {
-  background-color: #B088EF !important; /* Replace #yourColor with the desired color */
-  color: #fff; /* Optional: Set the text color */
-}
-
-/* Change background color for the active dropdown item */
-.dropdown-item.active {
-  background-color: #B088EF !important; /* Replace #yourActiveColor with the desired active color */
-  color: #fff; /* Optional: Set the text color */
-}
-
-/* Navbar.css */
-
-.navbar-dropdown-custom .dropdown-menu {
-  position: absolute;
-  top: 100%; /* Position below the parent link */
-  left: 0;
-  min-width: 200px; /* Set a minimum width if desired */
-  padding: 10px;
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  z-index: 1000;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.navbar-dropdown-custom .dropdown-item {
-  padding: 10px;
-  font-size: 16px;
-  color: #333;
-}
-
-
-.navbar-dropdown-full-width .dropdown-menu{
-  width: 100vw;
-  left: 0;
-}
-
-/* Navbar styles for mobile */
-.navbar-custom .nav-link {
-  font-size: 16px;
-}
-
-.navbar-custom .nav-cta, .navbar-custom .nav-cta2 {
-  width: 100%;
-  text-align: center;
-}
-
-/* For larger screens */
-@media (min-width: 992px) {
-  .navbar-custom .nav-cta, .navbar-custom .nav-cta2 {
-    width: auto;
-  }
-}
-
-
-/* Navbar Custom Styles */
-
-/* Ensure the Nav uses flex to distribute items evenly */
-.nav-items {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-/* Custom class for each nav item to ensure equal width */
-.nav-item-custom {
-  flex: 1;
-  text-align: center;
-}
-
-/* Adjust dropdown items if necessary */
-.dropdown-item-custom {
-  text-align: left; /* Align dropdown items to the left for better readability */
-}
-
-/* Style for the phone link to remove default link styling */
-.phone-link {
-  color: white;
   text-decoration: none;
 }
 
-/* Ensure the phone icon and text are aligned */
-.phone-link .svg-inline--fa {
-  margin-right: 5px;
+.fa-phone {
+  color: #B088EF !important;
 }
 
-/* Optional: Adjust button sizes and spacing */
-.nav-cta, .nav-cta2 {
-  width: 100%;
+.navbar-brand img {
+  width: 100px;
+  height: 100px;
 }
 
-@media (min-width: 992px) {
-  .nav-cta, .nav-cta2 {
-    width: auto;
+@media (max-width: 991px) {
+  .mega-menu {
+    top: 100%;
+    left: 0;
+    width: 100%;
+    top: 100%; /* Place below the navbar */
+    transform: none; /* Centered on screen */
   }
+
+  .nav-cta, .nav-cta2 {
+    width: 100%;
+    margin: 5px auto;
+  }
+  
+  .nav-cta2 a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.nav-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
 }
