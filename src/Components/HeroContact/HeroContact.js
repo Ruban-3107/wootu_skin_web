@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
+import contactimg from "../../Assets/contacthero.png";
 import { strapi_url, token } from '../../common/utils';
 import 'animate.css/animate.min.css';
 
@@ -34,15 +35,15 @@ export default function HeroContact(){
           {/* Left Side - Text */}
           <div className="col-lg-6 col-md-12 mb-4 mb-lg-0 hero-content">
             <div className="empty-space"></div>
-            {hero_text_1 && <h1 className="hero-title">{hero_text_1}</h1>}
-            {hero_text_2 && <p className="lead">{hero_text_2}</p>}
+            {hero_text_1 && <h1 className="hero-title">Contact Us</h1>}
+            {hero_text_2 && <p className="lead">Whether you have questions about our services, need product recommendations,  we’re just a message away. Feel free to reach out, and we’ll get back to you as soon as possible.</p>}
           </div>
 
           {/* Right Side - Image */}
           {hero_image && (
             <div className="col-lg-6 col-md-12 hero-image-section animate__animated animate__slideInRight">
               <img
-                src={`${strapi_url}${hero_image}`} // Replace with your image path
+                src={contactimg} // Replace with your image path
                 alt="Hero"
                 className="img-fluid hero-image" // Bootstrap class for responsive images
                 width={400}
