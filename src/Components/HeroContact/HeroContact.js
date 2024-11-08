@@ -8,7 +8,7 @@ import 'animate.css/animate.min.css';
 
 export default function HeroContact(){
    
-        const [hero_text_1, setHero_text_1] = useState('');
+  const [hero_text_1, setHero_text_1] = useState('');
   const [hero_text_2, setHero_text_2] = useState('');
   const [hero_image, setHero_image] = useState('');
 
@@ -40,7 +40,8 @@ export default function HeroContact(){
           </div>
 
           {/* Right Side - Image */}
-          {hero_image && (
+          {/* {hero_image &&  */}
+          {/* ( */}
             <div className="col-lg-6 col-md-12 hero-image-section animate__animated animate__slideInRight">
               <img
                 src={contactimg} // Replace with your image path
@@ -50,7 +51,8 @@ export default function HeroContact(){
                 height={300}
               />
             </div>
-          )}
+          {/* ) */}
+          {/* } */}
         </div>
       </div>
     </section>

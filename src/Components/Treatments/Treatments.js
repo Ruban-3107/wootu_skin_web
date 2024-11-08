@@ -1,5 +1,6 @@
 import React, { useEffect,useState } from 'react';
 import css from './Treatments.css';
+import Loader from '../../Components/Loader/Loader';
 import { Container, Row, Col, Carousel, Button, Modal, } from 'react-bootstrap';
 import { FaPlay } from 'react-icons/fa';
 import { useLocation } from 'react-router-dom';
@@ -38,11 +39,12 @@ const Treatments = () => {
 
   const [hero_section_image, setHero_image] = useState('');
   const [benefits_image, setBenefits_image] = useState('');
+  const [loading, setLoading] = useState(true);
   const [before_after_carousel, setBefore_after_carousel] = useState('');
   const location = useLocation();
   const { label } = location?.state || {};
   const [data, setData] = useState();
-  console.log({ label});
+  const [processedTreatmentData,setProcessedTreatmentData] = useState();
 
   const localImages = {
     "Hydra Facial": Hydrafacial,
@@ -69,6 +71,7 @@ const Treatments = () => {
 
   const checkImageSrc = async (url, fallback) => {
     try {
+      if(!url) return fallback;
       const response = await fetch(url);
       if (!response.ok) throw new Error('Image not found');
       return url;
@@ -96,6 +99,7 @@ const Treatments = () => {
         `${strapi_url}${fetchedData[0]?.before_after_carousel?.url}`, 
         localImages[label]
       ));
+      setLoading(false);
     } catch (error) {
       console.error('Error fetching services:', error);
     }
@@ -106,6 +110,7 @@ const Treatments = () => {
   }, []);
 
 
+
   const videoSources = [
     "https://youtube.com/shorts/DjYasFr-iz4?si=dwIeidq3SdeXuyls",  // Video 1
     "https://youtu.be/9fDKsFrCb4w?si=qnZHw43dH9ofVYtb",    // Video 2
@@ -114,15 +119,21 @@ const Treatments = () => {
   ];
 
   
-
+//   if (loading) {
+//     return (
+//       <div className="loading-screen">
+//         <Loader /> {/* Ensure this component is correctly rendering a spinner or animation */}
+//       </div>
+//     );
+// }
   
 
   return (
     
-    data && (<div className="lymphatic-drainage ">
+    hero_section_image && (<div className="lymphatic-drainage ">
       {/* Hero Section */}
       <section className="heroSection ">
-        <Container className='hero-section py-5'>
+        <Container className=' py-5'>
           {/* data[0].hero_section_image */}
 
           <Row className="align-items-center">
