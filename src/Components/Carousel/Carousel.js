@@ -47,7 +47,6 @@ const Carousel = () => {
       return fallback; // Return the fallback local image if the fetch fails
     }
   };
-console.log({carousels});
   const processImages = async () => {
     const promises = carousels.map(async (slide,index) => {
       const imageUrl = slide.image && slide.image.length > 0 ? `${strapi_url}${slide.image[0].url}` : null;

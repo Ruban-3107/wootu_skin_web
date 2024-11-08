@@ -12,10 +12,11 @@ export default function Home(data){
     <>
     <HeroSection data={data}/>
     <HomeCard/>
-<Carousel/>
+    <Carousel/>
 <Topservice/>
 <TrustContent/>
 <Testimonials/>
+
     </>
   )
 }
