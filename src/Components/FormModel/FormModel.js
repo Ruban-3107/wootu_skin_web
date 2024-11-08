@@ -24,7 +24,7 @@ export default function FormModal(){
                 src={contactImg}
                 alt="Booking"
                 className="form-image"
-                style={{ maxHeight: '100%', objectFit: 'cover' }}
+                style={{ maxHeight: '80%', objectFit: 'cover' }}
               />
             </Col>
 

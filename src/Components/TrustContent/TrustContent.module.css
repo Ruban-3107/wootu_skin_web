@@ -5,6 +5,11 @@
     min-height: 20vh !important;
 }
 
+.line-trust{
+  
+    border: 10px solid purple;
+}
+
 .trust-contanier{
     display: flex;
     align-items: center;

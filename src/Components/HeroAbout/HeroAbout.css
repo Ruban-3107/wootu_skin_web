@@ -11,10 +11,8 @@
     text-align: left;
     font-weight: bold;
     font-size: 1.8rem;
-    background: linear-gradient(90deg, #000 0%, #D4AF37 100%);
-background-clip: text;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+color: #000;
+
   }
 
   .display-4{
@@ -31,4 +29,21 @@ font-size: 1.6rem;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
+  }
+
+
+
+  @media screen and ( max-width : 786px) {
+    .my-3{
+      font-size: 2rem;
+      text-align: center;
+    }
+    .display-4{
+      font-size: 3rem;
+      text-align: center;
+    }
+    .lead{
+      font-size: 1rem;
+      text-align: center;
+    }
   }

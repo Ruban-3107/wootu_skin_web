@@ -45,7 +45,7 @@ const TrustContent = () => {
   return (
     <section className="container py-5 trust-container">
       <div className="trust-title">
-        <h2>{trust[0]?.title}</h2>
+        <h1>{trust[0]?.title}</h1>
       </div>
       <div className="row align-items-center trust-row">
         {/* Left Side: Image */}
@@ -64,12 +64,12 @@ const TrustContent = () => {
             <strong className="trust-number">{trust[0]?.reviews}</strong>
             <p className="trust-para"> reviews shared by Wootu members</p>
           </div>
-          <hr />
+          <hr className='line-trust' />
           <div className="trust-content">
             <strong className="trust-number">{trust[0]?.doctor_answered}</strong>
             <p className="trust-para"> patient questions answered by doctors</p>
           </div>
-          <hr />
+          <hr className='line-trust' />
           <div className="trust-content">
             <strong className="trust-number">{trust[0]?.people_satisfactions}</strong>
             <p className="trust-para"> of members say Wootu helps them understand procedures</p>

@@ -15,7 +15,7 @@ const Footer = () => {
           </Col>
           <Col md={3}>
             <h6 className="fw-bold">Open</h6>
-            <p>Mon - Sat</p>
+            <p>Monday - Saturday</p>
           </Col>
           <Col md={3}>
             <h6 className="fw-bold">Timing</h6>
@@ -114,7 +114,7 @@ const Footer = () => {
             <h6 className="fw-bold">Our Locations</h6>
             <ul className="list-unstyled">
               <li className='address-list'>
-                <FaMapMarkerAlt /> Wootu ® Nutrition , 61, 2nd Floor, A Block, 2th Ave, Above GKB Opticals near Roundtana & Metro StationAnnanagar East, Chennai – 600102
+                <FaMapMarkerAlt /> Wootu ® Nutrition , 61, 2nd Floor, A Block, 2nd Ave, Above GKB Opticals near Roundtana & Metro StationAnnanagar East, Chennai – 600102
                 
               </li>
               <li className='address-list'>
@@ -136,7 +136,7 @@ const Footer = () => {
 
               <li>
               
-                <FaEnvelope /> &nbsp; wootu@gmail.com
+                <FaEnvelope /> &nbsp; enquiry@wootu.in
                 <br />
                 <br />
                 <FaPhone /> &nbsp; +91 9977162789
@@ -155,7 +155,7 @@ const Footer = () => {
 All rights reserved.</p> 
   </div>
   <div className='col-lg-6 d-flex align-item-center justify-content-end'>
- <p>Privacy Police |
+ <p>Privacy Policy |
  Terms Of Use</p> 
   </div>
 

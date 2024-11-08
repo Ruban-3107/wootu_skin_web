@@ -6,6 +6,12 @@ Html,body{
   
 }
 
+.line-trust{
+  
+  border: 1px solid purple;
+}
+
+
 .backgroundSecBg{
   background-color: #ffffff !important;
 }
@@ -90,38 +96,33 @@ iframe {
 .carousel-wrapper {
   display: flex;
   align-items: center;
+  width: 100%;
   justify-content: center;
-  height: 100vh; /* Adjust this value to create the top and bottom space */
+  height: 80vh; /* Adjust this value to create the top and bottom space */
   margin: auto;
 }
 
 .carousel-container {
   width: 100%;
-  max-width: 1200px;
-  background-color: #fffff0 !important;
+ 
+  background-color: #fff !important;
 }
 
 .carousel-slide {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 
 }
 
-.carousel-content {
-  display: flex;
-  width: 100%;
-}
 
-.carousel-image {
-  flex: 1;
-  padding-right: 20px;
-}
+
 
 .carousel-image img {
   width: 80%;
-  height: 80vh;
-  border-radius: 10px;
+  height: 60vh;
+
 }
 
 .carousel-text {
@@ -221,7 +222,7 @@ iframe {
 }
 
 .trust-number{
-  color: #C5BA5A;
+  color: #B088EF;
   font-size: 36px;
 }
 
@@ -272,9 +273,15 @@ text-align: center;
     flex-direction: column;
   }
 
-  .heroSection{
-    min-height: 200vh;
-  }
+  
+.carousel-content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+  
 
   .homecard-container{
     min-height: 170vh;

@@ -13,9 +13,11 @@ export default function Whoweare() {
       <div className="text-center mb-4">
        
         <h2 className="d-inline-block">
-          <span className="border-left pl-2"><span><svg xmlns="http://www.w3.org/2000/svg" width="11" height="58" viewBox="0 0 11 58" fill="none">
-  <path d="M5.5 53.0051L5.5 4.99471" stroke="#D4AF37" stroke-width="10" stroke-linecap="square"/>
-</svg></span> Who We Are</span>
+          <span className="border-left pl-2">
+            <span><svg xmlns="http://www.w3.org/2000/svg" width="11" height="58" viewBox="0 0 11 58" fill="none">
+  <path d="M5.5 53.0051L5.5 4.99471" stroke="#B088EF" stroke-width="10" stroke-linecap="square"/>
+</svg>
+</span > Who We Are</span>
         </h2>
       </div>
       </FadeUpOnScroll>
@@ -32,7 +34,7 @@ export default function Whoweare() {
         </div>
         <div className="col-md-6">
           <p className='con-text'>
-         <span>W</span>
+         <span className='main-letter'>W</span>
           e are a passionate team of dermatologists, skincare specialists, and product innovators committed to delivering high-quality skincare.
            
           </p>

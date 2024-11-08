@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
+import { Container, Row, Col, Modal, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -9,16 +10,18 @@ import axios from 'axios';
 import hydrafacialImage from '../../Assets/Hydrafacial.jpg';
 import microNeedlingImage from '../../Assets/Micro Needling.jpg';
 import botoxImage from '../../Assets/Botox.jpg';
-
+import contactImg from "../../Assets/contact.png";
 
 const localImages = [
-   hydrafacialImage,
-   microNeedlingImage,
-   botoxImage
-
+  hydrafacialImage,
+  microNeedlingImage,
+  botoxImage
 ];
 
-const Carousel = () => {
+const CustomCarousel = () => {
+  const [show, setShow] = useState(false);
+  const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
   const [carousels, setCarousels] = useState([]);
   const [processedCarousels, setProcessedCarousels] = useState([]);
 
@@ -37,25 +40,24 @@ const Carousel = () => {
 
   const getImageSrc = async (url, fallback) => {
     try {
-      if(!url) return fallback;
+      if (!url) return fallback;
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error('Image not found');
       }
       return url;
     } catch {
-      return fallback; // Return the fallback local image if the fetch fails
+      return fallback;
     }
   };
-console.log({carousels});
+
   const processImages = async () => {
-    const promises = carousels.map(async (slide,index) => {
+    const promises = carousels.map(async (slide, index) => {
       const imageUrl = slide.image && slide.image.length > 0 ? `${strapi_url}${slide.image[0].url}` : null;
-      const imageSrc = await getImageSrc(imageUrl, localImages[index]); // Use heading_text to match localImages
-      console.log({imageSrc});
-      return { ...slide, imageSrc }; // Return the slide with the resolved image source
+      const imageSrc = await getImageSrc(imageUrl, localImages[index]);
+      return { ...slide, imageSrc };
     });
-    
+
     const results = await Promise.all(promises);
     setProcessedCarousels(results);
   };
@@ -64,41 +66,68 @@ console.log({carousels});
     if (carousels.length > 0) {
       processImages();
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [carousels]);
 
   const settings = {
     dots: true,
     infinite: true,
-    speed: 100,
+    speed: 6000, // Change this to control the transition speed
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true, // Enable auto-play
+    autoplaySpeed: 10, // Set the speed of auto-play in milliseconds (3 seconds)
   };
 
   return (
-    (processedCarousels.length > 0 && 
-    <FadeUpOnScroll>
-      <div className="carousel-wrapper">
-        <div className="carousel-container">
-          <Slider {...settings}>
-            {processedCarousels.map((slide) => (
-              <div className="carousel-slide" key={slide.id}>
-                <div className="carousel-content">
-                  <div className="carousel-image">
-                    <img src={slide.imageSrc} alt={slide.heading_text} />
-                  </div>
-                  <div className="carousel-text">
-                    <h2>{slide.heading_text}</h2>
-                    <p>{slide.text}</p>
+    (processedCarousels.length > 0 &&
+      <FadeUpOnScroll>
+        <div className="carousel-wrapper w-100">
+          <div className="container w-100">
+            <Slider {...settings}>
+              {processedCarousels.map((slide) => (
+                <div className="carousel-slide w-100" key={slide.id}>
+                  <div className="carousel-content">
+                    <div className="carousel-image">
+                      <img src={slide.imageSrc} alt={slide.heading_text} />
+                    </div>
+                    <div className="carousel-text">
+                      <h2>{slide.heading_text}</h2>
+                      <p>{slide.text}</p>
+                      <Button className='hero-btn' onClick={handleShow}><a href='#'>Book an Appointment</a></Button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </Slider>
+              ))}
+            </Slider>
+          </div>
         </div>
-      </div>
-    </FadeUpOnScroll>)
+
+        <Modal show={show} onHide={handleClose} centered size="xl" className='from-popup'>
+          <Modal.Body>
+            <Row className="g-0 frompopup-row">
+              <Col xs={12} md={6} className="d-flex align-items-center popup-image">
+                <img
+                  src={contactImg}
+                  alt="Booking"
+                  className="img-fluid w-100"
+                  style={{ maxHeight: '100%', objectFit: 'cover' }}
+                />
+              </Col>
+              <Col xs={12} md={6}>
+                <iframe
+                  title="Book An Appointment"
+                  src="https://forms.zohopublic.com/wootdiet/form/BookAppointmentskinhairinfluencer/formperma/H6JquAYN72xaH27VQpIZTSmImiLYFntXopffWAzzoN4"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 'none', background: 'transparent' }}
+                  allowFullScreen
+                ></iframe>
+              </Col>
+            </Row>
+          </Modal.Body>
+        </Modal>
+      </FadeUpOnScroll>)
   );
 };
 
-export default Carousel;
+export default CustomCarousel;

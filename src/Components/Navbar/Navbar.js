@@ -6,6 +6,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { Navbar, Nav, NavDropdown, Container, Button } from "react-bootstrap";
 import About from "../../pages/About";
 import Contact from "../../pages/Contact";
+import Career from  "../../pages/Career"
 import Home from "../../pages/Home";
 import TreatmentPage from "../../pages/TreatmentPage";
 import css from "./Navbar.css";
@@ -106,7 +107,7 @@ const CustomNavbar = () => {
               Skin & Hare
             </Nav.Link>
             {/* Career */}
-            <Nav.Link to="/">Career</Nav.Link>
+            <Nav.Link  href="/Career">Career</Nav.Link>
 
             {/* About */}
             <Nav.Link href="/About">About</Nav.Link>

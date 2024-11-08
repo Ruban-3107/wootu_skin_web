@@ -4,7 +4,7 @@ import { Container, Row, Col, Carousel, Button, Modal, } from 'react-bootstrap';
 import { FaPlay } from 'react-icons/fa';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
-import contactImg from "../../Assets/contact.png"
+import contactImg from "../../Assets/contact.png";
 import Hydrafacial from "../../Assets/Treatments/HydraFacial.jpg";
 import chemicalPeel from "../../Assets/Treatments/ChemicalPeel.jpg";
 import carbon from "../../Assets/Treatments/CarbonLaser.jpg";

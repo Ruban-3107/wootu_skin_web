@@ -22,7 +22,7 @@ export default function HeroAbout(){
     return(
       <FadeUpOnScroll>
         <section className="heroSection container-fluid py-5">
-            <div className="container hero-section">
+            <div className="container">
         <div className="row HeroAbout-row">
           <div className="col-md-5 text-center text-md-left">
             <h1 className="display-4 font-weight-bold">About Us</h1>

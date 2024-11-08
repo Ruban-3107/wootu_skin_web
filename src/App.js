@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import '@fortawesome/fontawesome-svg-core/styles.css';
-
+import Career from './pages/Career';
 import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import CustomNavbar from './Components/Navbar/Navbar';
 import Home from './pages/Home';
@@ -79,7 +79,9 @@ function App() {
           <div className="content-wrapper">
             <Routes>
               <Route path="/" element={<Navigate to="/home" replace />} />
-              <Route path="/home" element={<Home data={heroData}/>} />
+              <Route path="/home" element={<Home data={heroData}/>} />  
+              <Route path="/career" element={<Career />} />
+
               <Route path="/about" element={<About />} />
               <Route path="/treatmentpage" element={<TreatmentPage />} />
               <Route path="/contact" element={<Contact />} />

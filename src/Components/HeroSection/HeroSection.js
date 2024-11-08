@@ -9,7 +9,7 @@ const HeroSection = (data) => {
 (data && <FadeUpOnScroll>
     <section   className="heroSection d-flex align-items-center">
 
-      <div className="container hero-section">
+      <div className="container ">
         <div className="row align-items-center hero-row">
           {/* Left Side - Text */}
           <div className="col-lg-6 col-md-12 mb-4 mb-lg-0 hero-content">
