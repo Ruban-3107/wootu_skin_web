@@ -50,7 +50,6 @@ const CustomCarousel = () => {
       return fallback;
     }
   };
-
   const processImages = async () => {
     const promises = carousels.map(async (slide, index) => {
       const imageUrl = slide.image && slide.image.length > 0 ? `${strapi_url}${slide.image[0].url}` : null;

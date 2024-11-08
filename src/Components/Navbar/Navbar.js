@@ -1,9 +1,7 @@
 "use client"; // This makes the Navbar component a Client Component
-import { useEffect, useState } from "react"; // Only keep this correct import
-import { Link } from "react-router-dom";
+import {  useState } from "react"; // Only keep this correct import
 import "bootstrap/dist/css/bootstrap.min.css";
-import { createBrowserRouter } from "react-router-dom";
-import { Navbar, Nav, NavDropdown, Container, Button } from "react-bootstrap";
+import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import About from "../../pages/About";
 import Contact from "../../pages/Contact";
 import Career from  "../../pages/Career"

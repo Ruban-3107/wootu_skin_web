@@ -11,7 +11,7 @@ import darkcircle from '../../Assets/Darkcircle.png';
 import acne from '../../Assets/Acnescar.jpg';
 const HomeCard = () => {
   const [concerns, setConcerns] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [processedConcerns, setProcessedConcerns] = useState([]);
 
   const fetchData = async () => { 
     try {
@@ -19,9 +19,7 @@ const HomeCard = () => {
       setConcerns(response.data.data); // Store the fetched data in state
     } catch (error) {
       console.error('Error fetching data:', error);
-    } finally {
-      setLoading(false);
-    }
+    } 
   };
 
   useEffect(() => {
@@ -50,10 +48,13 @@ const HomeCard = () => {
   // Function to prepare the images asynchronously
   const prepareImages = async () => {
     const updatedConcerns = await Promise.all(concerns.map(async (concern) => {
-      const imageSrc = await checkImageSrc(`${strapi_url}${concern.image.url}`, localImages[concern.name]);
+      console.log("update concern:::",concern.image.url,concern.name);
+      const imageUrl = concern.image && concern.image.url  ? `${strapi_url}${concern.image.url}` : null;
+      const imageSrc = await checkImageSrc(imageUrl, localImages[concern.name]);
+      console.log({imageSrc });
       return { ...concern, imageSrc }; // Add the resolved imageSrc to the concern object
     }));
-    setConcerns(updatedConcerns);
+    setProcessedConcerns(updatedConcerns);
   };
 
   useEffect(() => {
@@ -68,11 +69,11 @@ const HomeCard = () => {
   // }
 
   return (
-    <FadeUpOnScroll>
+    (processedConcerns.length >0 && <FadeUpOnScroll>
       <div className="container homecard-container">
         <h1 className='topCon-title'>Top Concerns</h1>
         <div className="row homecard-row">
-          {concerns.map((concern) => (
+          {processedConcerns.map((concern) => (
             <div key={concern.id} className="col-lg-3 col-md-4 col-sm-12 card-col">
               <div className={styles.card}>
                 <img
@@ -91,7 +92,7 @@ const HomeCard = () => {
           ))}
         </div>
       </div>
-    </FadeUpOnScroll>
+    </FadeUpOnScroll>)
   );
 };
 

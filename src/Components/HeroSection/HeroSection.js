@@ -4,7 +4,6 @@ import FadeUpOnScroll from '../FadeUp/FadeUpOnScroll';
 import 'animate.css/animate.min.css';
 
 const HeroSection = (data) => {
-  console.log("data?.data?.data?.hero_image:::",data?.data?.data?.hero_image.url)
   return (
 (data && <FadeUpOnScroll>
     <section   className="heroSection d-flex align-items-center">
