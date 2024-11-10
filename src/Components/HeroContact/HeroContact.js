@@ -9,7 +9,7 @@ import { Container,Row } from 'react-bootstrap';
 
 export default function HeroContact(){
    
-        const [hero_text_1, setHero_text_1] = useState('');
+  const [hero_text_1, setHero_text_1] = useState('');
   const [hero_text_2, setHero_text_2] = useState('');
   const [hero_image, setHero_image] = useState('');
 

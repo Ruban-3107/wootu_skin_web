@@ -11,7 +11,6 @@ import lightPeelImage from '../../Assets/image 09.png';
 
 const Topservice = () => {
   const [services, setServices] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [processedServices, setProcessedServices] = useState([]);
 
   const fetchServices = async () => {
@@ -20,8 +19,6 @@ const Topservice = () => {
       setServices(response.data.data);
     } catch (error) {
       console.error('Error fetching services:', error);
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -38,6 +35,7 @@ const Topservice = () => {
 
   const getImageSrc = async (url, fallback) => {
     try {
+      if(!url) return fallback;
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error('Image not found');
@@ -50,7 +48,8 @@ const Topservice = () => {
 
   const processImages = async () => {
     const promises = services.map(async (service) => {
-      const imageSrc = await getImageSrc(`${strapi_url}${service.image.url}`, localImages[service.name]);
+      const imageUrl = service.image && service.image.url  ? `${strapi_url}${service.image.url}` : null;
+      const imageSrc = await getImageSrc(imageUrl, localImages[service.name]);
       return { ...service, imageSrc }; // Return the service with the resolved image source
     });
     const results = await Promise.all(promises);
@@ -69,6 +68,7 @@ const Topservice = () => {
   // }
 
   return (
+    (processedServices.length > 0 &&
     <div className="container homecard-container">
       <h1 className="card-title">Top Services</h1>
       <div className="row homecard-row">
@@ -88,7 +88,7 @@ const Topservice = () => {
           </div>
         ))}
       </div>
-    </div>
+    </div>)
   );
 };
 

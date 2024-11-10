@@ -48,10 +48,8 @@ const HomeCard = () => {
   // Function to prepare the images asynchronously
   const prepareImages = async () => {
     const updatedConcerns = await Promise.all(concerns.map(async (concern) => {
-      console.log("update concern:::",concern.image.url,concern.name);
       const imageUrl = concern.image && concern.image.url  ? `${strapi_url}${concern.image.url}` : null;
       const imageSrc = await checkImageSrc(imageUrl, localImages[concern.name]);
-      console.log({imageSrc });
       return { ...concern, imageSrc }; // Add the resolved imageSrc to the concern object
     }));
     setProcessedConcerns(updatedConcerns);

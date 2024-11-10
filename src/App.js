@@ -42,18 +42,16 @@ function App() {
     try {
       setIsContentLoaded(false); 
       let response = await axios.get(`${strapi_url}/api/landing-pages?populate=*`);
-      console.log("check:::",response?.data?.data[0].hero_image.url);
+
       const imgSrc = await processImage(response.data.data[0]?.hero_image.url);
       console.log({imgSrc});
       if (response.data.data[0]) {
         response.data.data[0].hero_image.url = imgSrc; // Now you can safely assign
       } 
       setHeroData(response?.data?.data[0]);
-      // setIsContentLoaded(true);
+      setIsContentLoaded(true);
     } catch (error) {
       console.error('Error fetching data:', error);
-    }finally {
-      setIsContentLoaded(true); // Hide loader after data is fetched
     }
   };
 
@@ -64,6 +62,7 @@ function App() {
    
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
+  console.log("location:::",location);
 
   // Don't render anything until content is loaded
   if (!isContentLoaded) {
