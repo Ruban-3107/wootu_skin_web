@@ -4,6 +4,9 @@ import { Container, Row, Col, Carousel, Button, Modal, } from 'react-bootstrap';
 import { FaPlay } from 'react-icons/fa';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
+import slider3 from "../../Assets/beforeandafter3.png";
+import slider1 from "../../Assets/beforeandafter.png";
+import slider2 from "../../Assets/beforeandafter2.png";
 import contactImg from "../../Assets/contact.png";
 import Hydrafacial from "../../Assets/Treatments/HydraFacial.jpg";
 import chemicalPeel from "../../Assets/Treatments/ChemicalPeel.jpg";
@@ -185,35 +188,35 @@ const Treatments = () => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://via.placeholder.com/800x400"
+          src={slider1}
           alt="First slide"
         />
-        <Carousel.Caption>
+        {/* <Carousel.Caption>
           <h3>First Slide</h3>
           <p>This is the first slide description.</p>
-        </Carousel.Caption>
+        </Carousel.Caption> */}
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://via.placeholder.com/800x400"
+          src={slider2}
           alt="Second slide"
         />
-        <Carousel.Caption>
+        {/* <Carousel.Caption>
           <h3>Second Slide</h3>
           <p>This is the second slide description.</p>
-        </Carousel.Caption>
+        </Carousel.Caption> */}
       </Carousel.Item>
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://via.placeholder.com/800x400"
+          src={slider3}
           alt="Third slide"
         />
-        <Carousel.Caption>
+        {/* <Carousel.Caption>
           <h3>Third Slide</h3>
           <p>This is the third slide description.</p>
-        </Carousel.Caption>
+        </Carousel.Caption> */}
       </Carousel.Item>
     </Carousel>
           </Row>

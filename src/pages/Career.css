@@ -6,11 +6,18 @@
     min-height: 60vh;
 }
 
+.great-place-section{
+  display: flex;
+  min-height: 80vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 
-  .hero-section {
-    background-color: #f8f9fa;
-    padding: 60px 0;
-  }
+.great-place-section > h2{
+  min-height: 10vh;
+}
+
   
   .hero-title {
     font-size: 4rem;
@@ -60,79 +67,61 @@
   }
   
   .benefits-card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(-108deg, #B088EF 19.45%, #D4B9FD 38.38%, #FFF 64.14%);
+width: 250px;
   }
+
+  .benifit-card-row{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+
   
   .image-collage {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
   }
-  .timeline-section {
-    padding-top: 40px;
+ 
+ 
+  .zoom-on-hover{
+    width: 250px;
   }
-  
-  .timeline {
-    position: relative;
-    margin-top: 20px;
-  }
-  
-  .timeline-item {
+
+ 
+  .value-row{
+    width: 100%;
     display: flex;
     align-items: center;
-    margin: 20px 0;
-    position: relative;
+    justify-content: space-evenly;
   }
-  
-  .timeline-circle {
+
+  .openings-section > h2 {
+    text-align: center;
+  }
+
+  .openings-section > p {
+    text-align: center;
+  }
+
+  .form-card{
+min-height: 80vh;
+display: flex;
+
+align-items: center;
+justify-content: center;
+    background-color: #fff;
+   width: 80%;
+    border-radius: 12px;
+   border: 2px solid purple;
+  }
+
+  .openings-section{
     display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .circle {
-    width: 40px;
-    height: 40px;
-    background-color: #007bff;
-    border-radius: 50%;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .timeline-content {
-    background: #f8f9fa;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .timeline-content.left {
-    text-align: left;
-    order: 2;
-  }
-  
-  .timeline-content.right {
-    text-align: right;
-    order: 1;
-  }
-  
-  @media (max-width: 768px) {
-    .timeline-item {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .timeline-content {
-      order: 1;
-      text-align: center;
-    }
-  
-    .timeline-circle {
-      margin-bottom: 10px;
-    }
-  }
-  
+
+align-items: center;
+justify-content: center;
+flex-direction: column;  }

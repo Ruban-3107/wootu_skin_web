@@ -68,8 +68,8 @@ const CustomNavbar = () => {
     navigate("/TreatmentPage", { state: { label } });
   };
   return (
-    <Navbar expand="lg" className="py-0">
-      <Container>
+    <Navbar expand="xxl" className="py-0">
+      <Container > 
         {/* Left side - Logo */}
         <Navbar.Brand href="#">
           <img
@@ -123,9 +123,10 @@ const CustomNavbar = () => {
           <Button variant="primary" className="nav-cta2">
             <a
               href="tel:9500412121"
-              className="text-white text-decoration-none"
+              className="text-white text-decoration-none call-icon"
             >
-              <FontAwesomeIcon icon={faPhone} className="me-2" />
+             <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" width="20" height="20"><path fill="white" d="M12,24C5.383,24,0,18.617,0,12S5.383,0,12,0s12,5.383,12,12-5.383,12-12,12Zm0-22C6.486,2,2,6.486,2,12s4.486,10,10,10,10-4.486,10-10S17.514,2,12,2Zm3.288,11.115l-1.775,1.775c-2.027-.773-3.521-2.208-4.403-4.403l1.775-1.775-2.712-2.712-1.378,1.378c-.54,.539-.795,1.249-.795,1.957,0,3.914,5.032,8.666,8.666,8.666,.708,0,1.418-.256,1.957-.795l1.378-1.378-2.712-2.712Z"/></svg>
+
               +91 9500412121
             </a>
           </Button>

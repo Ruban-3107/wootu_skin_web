@@ -4,6 +4,7 @@ import axios from 'axios';
 import contactimg from "../../Assets/contacthero.png";
 import { strapi_url, token } from '../../common/utils';
 import 'animate.css/animate.min.css';
+import { Container,Row } from 'react-bootstrap';
 
 
 export default function HeroContact(){
@@ -30,8 +31,8 @@ export default function HeroContact(){
 
   return (
     <section className="heroSection d-flex align-items-center">
-      <div className="container">
-        <div className="row align-items-center">
+      <Container>
+        <Row className="row align-items-center">
           {/* Left Side - Text */}
           <div className="col-lg-6 col-md-12 mb-4 mb-lg-0 hero-content">
             <div className="empty-space"></div>
@@ -41,7 +42,7 @@ export default function HeroContact(){
 
           {/* Right Side - Image */}
           {hero_image && (
-            <div className="col-lg-6 col-md-12 hero-image-section animate__animated animate__slideInRight">
+            <div className="col-lg-6 col-md-12 hero-image-section ">
               <img
                 src={contactimg} // Replace with your image path
                 alt="Hero"
@@ -51,8 +52,8 @@ export default function HeroContact(){
               />
             </div>
           )}
-        </div>
-      </div>
+        </Row>
+      </Container>
     </section>
     )
 }

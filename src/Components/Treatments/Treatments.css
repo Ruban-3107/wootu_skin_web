@@ -27,11 +27,11 @@
     text-align: center;
     color: #000;
 font-family: "Inria Sans";
-font-size: 48px;
+font-size: 3rem;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
-min-height: 20vh;
+min-height: 10vh;
   }
 /* CSS for carousel */
 .carousel-item img {

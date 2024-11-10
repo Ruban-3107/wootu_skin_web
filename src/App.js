@@ -5,6 +5,7 @@ import Career from './pages/Career';
 import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import CustomNavbar from './Components/Navbar/Navbar';
 import Home from './pages/Home';
+import FloatingCallButton from './Components/floatCall/FloatingCallButton';
 import About from './pages/About';
 import Footer from './Components/Footer/Footer';
 import Contact from './pages/Contact';
@@ -87,6 +88,7 @@ function App() {
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </div>
+          {isContentLoaded && <FloatingCallButton />}
           {isContentLoaded && <WhatsAppButton />}
         { isContentLoaded && <Footer />}
           </div>
