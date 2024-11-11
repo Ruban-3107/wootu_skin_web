@@ -10,3 +10,19 @@ hr{
 border: 10px solid #ffffff 1;
     color: #fff;
 }
+
+@media only screen and (max-width:768px) {
+    .opening-timing{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .opening-timing > h6{
+        text-align: center;
+    }
+
+    .opening-timing > p{
+        text-align: center;
+    }
+}

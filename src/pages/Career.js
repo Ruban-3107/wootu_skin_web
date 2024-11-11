@@ -21,9 +21,9 @@ return (
       <Container>
       <Row className="align-items-center container">
         <Col md={6}>
-          <h1 className="hero-title">Join Us at Wootu</h1>
-          <h4 className="hero-subtitle">Your career starts here</h4>
-          <p className="hero-body-text">Explore a place where innovation meets passion.</p>
+          <h1 className="hero-title career-hero-title">Join Us at Wootu</h1>
+          <h4 className="hero-subtitle career-hero-subtitle">Your career starts here</h4>
+          <p className="hero-body-text career-hero-text">Explore a place where innovation meets passion.</p>
         </Col>
         <Col md={6}>
           <img src={CareerHero} alt="Career at Wootu" className="img-fluid" />
@@ -38,7 +38,7 @@ return (
       <h2>What makes Wootu a great place to work?</h2>
       <Row className='value-row'>
 
-          <Col md={3} >
+          <Col md={3} className='col-cards'>
             <Card className="zoom-on-hover">
               <Card.Img src={valueImg} />
               <Card.Body>
@@ -47,7 +47,7 @@ return (
               </Card.Body>
             </Card>
           </Col>
-          <Col md={3} >
+          <Col md={3} className='col-cards'>
             <Card className="zoom-on-hover">
               <Card.Img src={growImg} />
               <Card.Body>
@@ -57,7 +57,7 @@ return (
             </Card>
           </Col>
 
-          <Col md={3} >
+          <Col md={3} className='col-cards'>
             <Card className="zoom-on-hover">
               <Card.Img src={atomspareImg} />
               <Card.Body>
@@ -67,7 +67,7 @@ return (
             </Card>
           </Col>
 
-          <Col md={3} >
+          <Col md={3}className='col-cards' >
             <Card className="zoom-on-hover">
               <Card.Img src={BalanceImg} />
               <Card.Body>

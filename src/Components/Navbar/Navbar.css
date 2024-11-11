@@ -1,57 +1,90 @@
-
-
-.call-icon{
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+.navbar {
+  background-color: white !important;
+  position: relative;
+  box-shadow: none !important;
 }
 
-.nav-items {
-  display: flex;
-  gap: 20px; /* Space between each item */
-  justify-content: center;
-  align-items: center;
+.nav-link {
+  font-size: 20px;
+  color: #000;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
 }
 
-.navbar .nav-link {
-  padding: 10px 15px;
-  color: #000; /* Adjust color as needed */
-  font-weight: 500;
-  font-size: 1.5rem;
+.nav-link:hover {
+  color: #B088EF;
 }
 
-.navbar .nav-link:hover {
-  color: #8154C8; /* Hover color */
-  text-decoration: none;
+.nav-link:hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  width: 70px;
+  background-color: #B088EF;
+  transition: width 0.3s ease;
 }
 
 .mega-menu {
   position: absolute;
   top: 100%;
-  left: 0;
-  right: 0;
-  background-color: #fff;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
   z-index: 1000;
-  font-size: 1.5rem;
+}
+
+.mega-menu h3 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .mega-menu-item {
-  padding: 10px;
+  padding: 0.5rem;
   cursor: pointer;
-  color: #333;
-  font-weight: 400;
-  font-size: 1.1rem;
+  transition: all 0.3s ease;
 }
 
 .mega-menu-item:hover {
-  background-color: #f1f1f1;
+  background-color: #f8f9fa;
+  color: #007bff;
 }
 
+.nav-cta {
+  width: 10vw;
+  padding: 10px;
+  background-color: #fff;
+  border-color: #B088EF !important;
+  color: #B088EF;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
 
-.fa-phone {
-  color: #B088EF !important;
+.nav-cta:hover {
+  background-color: #B088EF;
+  color: #fff;
+}
+
+.nav-cta2 {
+  width: 15vw;
+  padding: 10px;
+  background-color: #b088ef !important;
+  border-color: #B088EF !important;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.nav-cta2 > a {
+  color: #fff;
+  text-decoration: none;
 }
 
 .navbar-brand img {
@@ -59,53 +92,56 @@
   height: 100px;
 }
 
+.nav-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* Responsive Styles for Mobile and Tablet */
 @media (max-width: 991px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  
+  .navbar-brand {
+    order: 1;
+  }
+
+  .navbar-toggler {
+    order: 2;
+  }
+
+  
+
   .mega-menu {
     top: 100%;
     left: 0;
     width: 100%;
-    top: 100%; /* Place below the navbar */
-    transform: none; /* Centered on screen */
+    transform: none;
+  }
+
+  .d-flex {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
   }
 
   .nav-cta, .nav-cta2 {
-    width: 100%;
-    margin: 5px auto;
-  }
+    flex: 1;
   
+    text-align: center;
+  }
+
   .nav-cta2 a {
     display: flex;
     align-items: center;
     justify-content: center;
   }
 }
-
-.nav-cta{
- background-color: #8154C8;
- border: none;
- font-size: 1.5rem;
- font-weight: 600;
-}
-
-.nav-cta2{
-  background-color: #8154C8;
-  border: none;
-  font-size: 1.5rem;
-  font-weight: 600;
- }
-
- .nav-cta:hover{
-  background-color: #fff;
-  color: #8154C8;
-  border: none;
-  font-size: 1.5rem;
-  font-weight: 600;
- }
-
-
- .nav-cta2:hover{
-  background-color: #8154C8;
-  border: none;
-  font-size: 1.5rem;
-  font-weight: 600;
- }

@@ -82,7 +82,7 @@ const CustomCarousel = () => {
       <FadeUpOnScroll>
         <div className="carousel-wrapper w-100">
           <div className="container w-100">
-            <Slider {...settings}>
+            <Slider className='car-slider' {...settings}>
               {processedCarousels.map((slide) => (
                 <div className="carousel-slide w-100" key={slide.id}>
                   <div className="carousel-content">
@@ -90,8 +90,8 @@ const CustomCarousel = () => {
                       <img src={slide.imageSrc} alt={slide.heading_text} />
                     </div>
                     <div className="carousel-text">
-                      <h2>{slide.heading_text}</h2>
-                      <p>{slide.text}</p>
+                      <h2 className="carousel-title">{slide.heading_text}</h2>
+                      <p className="carousel-body-text">{slide.text}</p>
                       <Button className='hero-btn' onClick={handleShow}><a href='#'>Book an Appointment</a></Button>
                     </div>
                   </div>

@@ -13,15 +13,15 @@ const Footer = () => {
           <Col md={3} className="d-flex align-items-center">
             <img src={logo} alt="Logo" className="footer-logo" width={100} />
           </Col>
-          <Col md={3}>
+          <Col md={3} className='opening-timing'>
             <h6 className="fw-bold">Open</h6>
             <p>Monday - Saturday</p>
           </Col>
-          <Col md={3}>
+          <Col md={3} className='opening-timing'>
             <h6 className="fw-bold">Timing</h6>
             <p>10:00 AM to 10:00 PM</p>
           </Col>
-          <Col md={3}>
+          <Col md={3} className='opening-timing'>
             <h6 className="fw-bold">Follow On</h6>
             <div>
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-dark me-3">
@@ -39,7 +39,7 @@ const Footer = () => {
 
         {/* Footer Bottom Section */}
         <Row>
-          <Col md={3}>
+          <Col md={3} className='opening-timing'>
             <h6 className="fw-bold">Explore</h6>
             <ul className="list-unstyled linespace">
               <li><a href="/home" className="text-link">Home</a></li>
@@ -52,9 +52,9 @@ const Footer = () => {
             </ul>
           </Col>
 
-          <Col md={3}>
+          <Col md={3} className='opening-timing'>
             <h6 className="fw-bold">Slimming</h6>
-            <ul className="list-unstyled linespace">
+            <ul className="list-unstyled linespace opening-timing">
               <li><a href="/slimming/treatment1" className="text-link">Lymphatic Drainage</a></li>
               <li><a href="/slimming/treatment2" className="text-link">Abdomen Tucks</a></li>
               <li><a href="/slimming/treatment3" className="text-link">Back Tucks</a></li>
@@ -74,9 +74,9 @@ const Footer = () => {
             </ul>
           </Col>
 
-          <Col md={3}>
+          <Col md={3} className='opening-timing'>
             <h6 className="fw-bold">Skin</h6>
-            <ul className="list-unstyled linespace">
+            <ul className="list-unstyled linespace opening-timing">
               <li><a href="/skin/treatment1" className="text-link">Hydra Facial</a></li>
               <li><a href="/skin/treatment2" className="text-link">Chemical Peel</a></li>
               <li><a href="/skin/treatment3" className="text-link">Carbon Laser</a></li>
@@ -110,7 +110,7 @@ const Footer = () => {
             </ul>
           </Col>
 
-          <Col md={3}>
+          <Col md={3} className='opening-timing'>
             <h6 className="fw-bold">Our Locations</h6>
             <ul className="list-unstyled">
               <li className='address-list'>
@@ -134,7 +134,7 @@ const Footer = () => {
                 <FaMapMarkerAlt /> Wootu Nutrition,114,7th Floor,B-Block ,Mena Kampala Arcade ,Sir Thyagaraya Road,d,Chennai 600017
               </li>
 
-              <li>
+              <li className='opening-timing'>
               
                 <FaEnvelope /> &nbsp; enquiry@wootu.in
                 <br />
@@ -149,12 +149,12 @@ const Footer = () => {
 <hr/>
       <Container>
 <div className='row d-flex align-item-center justify-content-center'>
-  <div className='col-lg-6 align-item-center'>
+  <div className='col-lg-6 align-item-center opening-timing'>
  <p>Copyright
 2024.
 All rights reserved.</p> 
   </div>
-  <div className='col-lg-6 d-flex align-item-center justify-content-end'>
+  <div className='col-lg-6 d-flex align-item-center justify-content-end opening-timing'>
  <p>Privacy Policy |
  Terms Of Use</p> 
   </div>

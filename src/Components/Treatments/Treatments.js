@@ -187,7 +187,7 @@ const Treatments = () => {
       </section>
     
       {/* Before/After Carousel Section */}
-      <section className="before-after-carousel py-5">
+      <section className="before-after-carousel ">
         {/* data[0].before_after_section_image */}
         <Container>
         <h1 className='title-treatment'>

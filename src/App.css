@@ -98,7 +98,7 @@ iframe {
   align-items: center;
   width: 100%;
   justify-content: center;
-  height: 80vh; /* Adjust this value to create the top and bottom space */
+  min-height: 80vh; /* Adjust this value to create the top and bottom space */
   margin: auto;
 }
 
