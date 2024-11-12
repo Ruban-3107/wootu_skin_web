@@ -38,7 +38,7 @@ return (
       <h2>What makes Wootu a great place to work?</h2>
       <Row className='value-row'>
 
-          <Col md={3} className='col-cards'>
+          <Col md={3} sm={12} className='col-cards'>
             <Card className="zoom-on-hover">
               <Card.Img src={valueImg} />
               <Card.Body>
@@ -47,7 +47,7 @@ return (
               </Card.Body>
             </Card>
           </Col>
-          <Col md={3} className='col-cards'>
+          <Col md={3}  sm={12} className='col-cards'>
             <Card className="zoom-on-hover">
               <Card.Img src={growImg} />
               <Card.Body>
@@ -57,7 +57,7 @@ return (
             </Card>
           </Col>
 
-          <Col md={3} className='col-cards'>
+          <Col md={3}  sm={12} className='col-cards'>
             <Card className="zoom-on-hover">
               <Card.Img src={atomspareImg} />
               <Card.Body>
@@ -67,7 +67,7 @@ return (
             </Card>
           </Col>
 
-          <Col md={3}className='col-cards' >
+          <Col md={3}  sm={12} className='col-cards' >
             <Card className="zoom-on-hover">
               <Card.Img src={BalanceImg} />
               <Card.Body>

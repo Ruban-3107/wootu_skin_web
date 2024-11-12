@@ -12,7 +12,7 @@ const VideoPlayer = ({ videoSrc }) => {
   };
 
     return(
-        <div className="col-3 mb-4"> {/* Use col-3 for four cards in a row */}
+        <div className="col-lg-3 col-md-6 col-sm-12 d-flex align-item-center justify-content-center mb-4"> {/* Use col-3 for four cards in a row */}
       <div className="card h-100 position-relative video-card w-100">
         <iframe
           src={isPlaying ? videoSrc : ''}

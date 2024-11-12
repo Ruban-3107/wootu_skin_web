@@ -1,20 +1,18 @@
 "use client"; // This makes the Navbar component a Client Component
-import { useEffect, useState } from "react"; // Only keep this correct import
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { createBrowserRouter } from "react-router-dom";
 import { Navbar, Nav, NavDropdown, Container, Button } from "react-bootstrap";
 import About from "../../pages/About";
 import Contact from "../../pages/Contact";
 import Home from "../../pages/Home";
 import TreatmentPage from "../../pages/TreatmentPage";
 import css from "./Navbar.css";
-import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import logo from "../../Assets/Wootlogo.png";
 
-const skin = [
+const skinTreatments = [
   "Hydra Facial",
   "Chemical Peel",
   "Carbon Laser",
@@ -26,6 +24,9 @@ const skin = [
   "Yellow Peel",
   "Salicylic Peel",
   "Glutathione Peel",
+];
+
+const hairTreatments = [
   "Upper Lip",
   "Chin",
   "Upper Arms",
@@ -55,18 +56,7 @@ const slimming = [
 ];
 
 const CustomNavbar = () => {
-  const [showMegaMenu, setShowMegaMenu] = useState(false);
-  const [activeMenu, setActiveMenu] = useState("");
   const navigate = useNavigate();
-
-  const handleMenuEnter = (menuType) => {
-    setActiveMenu(menuType);
-    setShowMegaMenu(true);
-  };
-
-  const handleMenuLeave = () => {
-    setShowMegaMenu(false);
-  };
 
   const handleNavigate = (label) => {
     navigate("/TreatmentPage", { state: { label } });
@@ -79,27 +69,33 @@ const CustomNavbar = () => {
           <img src={logo} alt="Logo" width="100" height="100" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarResponsive" />
-        <Navbar.Collapse
-          id="navbarResponsive"
-          className="justify-content-center"
-        >
+        <Navbar.Collapse id="navbarResponsive" className="justify-content-center">
           <Nav className="nav-items h-100 w-100 justify-content-around">
-            <Nav.Link href="/Home">Home</Nav.Link>
-            <Nav.Link
-              onMouseEnter={() => handleMenuEnter("slimming")}
-              onMouseLeave={handleMenuLeave}
-            >
-              Slimming
-            </Nav.Link>
-            <Nav.Link
-              onMouseEnter={() => handleMenuEnter("skin")}
-              onMouseLeave={handleMenuLeave}
-            >
-              Skin & Hair
-            </Nav.Link>
-            <Nav.Link to="/">Career</Nav.Link>
-            <Nav.Link href="/About">About</Nav.Link>
-            <Nav.Link href="/Contact">Contact</Nav.Link>
+            <Nav.Link href="/Home" className="nav-link">Home</Nav.Link>
+            <NavDropdown title="Slimming" id="slimming-dropdown"  className="nav-link">
+              {slimming.map((treatment) => (
+                <NavDropdown.Item key={treatment} onClick={() => handleNavigate(treatment)}>
+                  {treatment}
+                </NavDropdown.Item>
+              ))}
+            </NavDropdown>
+            <NavDropdown title="Skin" id="skin-dropdown"  className="nav-link">
+              {skinTreatments.map((treatment) => (
+                <NavDropdown.Item key={treatment} onClick={() => handleNavigate(treatment)}>
+                  {treatment}
+                </NavDropdown.Item>
+              ))}
+            </NavDropdown>
+            <NavDropdown title="Hair" id="hair-dropdown"  className="nav-link">
+              {hairTreatments.map((treatment) => (
+                <NavDropdown.Item key={treatment} onClick={() => handleNavigate(treatment)}>
+                  {treatment}
+                </NavDropdown.Item>
+              ))}
+            </NavDropdown>
+            <Nav.Link href="/Career"  className="nav-link">Career</Nav.Link>
+            <Nav.Link href="/About"  className="nav-link">About</Nav.Link>
+            <Nav.Link href="/Contact"  className="nav-link">Contact</Nav.Link>
           </Nav>
 
           <div className="d-flex flex-lg-row flex-column gap-3 mt-2 mt-lg-0">
@@ -115,48 +111,6 @@ const CustomNavbar = () => {
           </div>
         </Navbar.Collapse>
       </Container>
-
-      {/* Mega Menu */}
-      {showMegaMenu && (
-        <div
-          className="mega-menu"
-          onMouseEnter={() => setShowMegaMenu(true)}
-          onMouseLeave={handleMenuLeave}
-        >
-          <div className="container">
-            <div className="row justify-content-center">
-              {activeMenu === "slimming" && (
-                <div className="col-md-10">
-                  <h3 className="text-center">Slimming Treatments</h3>
-                  <div className="row">
-                    {slimming.map((treatment) => (
-                      <div className="col-md-6" key={treatment}>
-                        <div className="mega-menu-item" onClick={() => handleNavigate(treatment)}>
-                          {treatment}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-              {activeMenu === "skin" && (
-                <div className="col-md-10">
-                  <h3 className="text-center">Skin & Hair Treatments</h3>
-                  <div className="row">
-                    {skin.map((treatment) => (
-                      <div className="col-md-6" key={treatment}>
-                        <div className="mega-menu-item" onClick={() => handleNavigate(treatment)}>
-                          {treatment}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
     </Navbar>
   );
 };

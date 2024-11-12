@@ -80,16 +80,16 @@ const CustomCarousel = () => {
   return (
     (processedCarousels.length > 0 &&
       <FadeUpOnScroll>
-        <div className="carousel-wrapper w-100">
+        <div className="carousel-wrapper w-100 py-5">
           <div className="container w-100">
             <Slider className='car-slider' {...settings}>
               {processedCarousels.map((slide) => (
                 <div className="carousel-slide w-100" key={slide.id}>
-                  <div className="carousel-content">
-                    <div className="carousel-image">
+                  <div className="carousel-content row">
+                    <div className="carousel-image col-lg-6">
                       <img src={slide.imageSrc} alt={slide.heading_text} />
                     </div>
-                    <div className="carousel-text">
+                    <div className="carousel-text col-lg-6">
                       <h2 className="carousel-title">{slide.heading_text}</h2>
                       <p className="carousel-body-text">{slide.text}</p>
                       <Button className='hero-btn' onClick={handleShow}><a href='#'>Book an Appointment</a></Button>
