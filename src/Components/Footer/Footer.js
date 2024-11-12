@@ -10,7 +10,7 @@ const Footer = () => {
       <Container className='footer-container'>
         {/* Footer Top Section */}
         <Row className="mb-4">
-          <Col md={3} className="d-flex align-items-center">
+          <Col md={3} className="d-flex align-items-center opening-timing">
             <img src={logo} alt="Logo" className="footer-logo" width={100} />
           </Col>
           <Col md={3} className='opening-timing'>
@@ -154,7 +154,7 @@ const Footer = () => {
 2024.
 All rights reserved.</p> 
   </div>
-  <div className='col-lg-6 d-flex align-item-center justify-content-end opening-timing'>
+  <div className='col-lg-6 d-flex align-item-center privacy  opening-timing'>
  <p>Privacy Policy |
  Terms Of Use</p> 
   </div>

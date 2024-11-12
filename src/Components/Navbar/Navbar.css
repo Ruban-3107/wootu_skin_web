@@ -5,9 +5,12 @@
 }
 
 .nav-link {
+  /* position: relative; */
   font-size: 20px;
   color: #000;
   font-weight: 600;
+  display: flex;
+  align-items: center;
   padding: 0.5rem 1rem;
   transition: color 0.3s ease;
 }
@@ -26,17 +29,21 @@
   transition: width 0.3s ease;
 }
 
+
+
+/* Mega menu general styling */
 .mega-menu {
   position: absolute;
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  width: 50%;
+  width: 50%; /* Adjusted for smaller screens */
   background: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 1rem 0;
   z-index: 1000;
 }
+
 
 .mega-menu h3 {
   color: #333;
@@ -60,11 +67,13 @@
   width: 10vw;
   padding: 10px;
   background-color: #fff;
+  border-radius: 2px solid #B088EF !important;
   border-color: #B088EF !important;
   color: #B088EF;
   font-size: 18px;
   font-weight: bold;
   transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .nav-cta:hover {
@@ -73,13 +82,15 @@
 }
 
 .nav-cta2 {
-  width: 15vw;
+
   padding: 10px;
   background-color: #b088ef !important;
+  border-radius: 2px solid #B088EF !important;
   border-color: #B088EF !important;
   color: #fff;
   font-size: 18px;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 .nav-cta2 > a {
@@ -87,58 +98,29 @@
   text-decoration: none;
 }
 
+.fa-phone {
+  color: #B088EF !important;
+}
+
 .navbar-brand img {
   width: 100px;
   height: 100px;
 }
 
-.nav-items {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-/* Responsive Styles for Mobile and Tablet */
 @media (max-width: 991px) {
-  .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  
-  .navbar-brand {
-    order: 1;
-  }
-
-  .navbar-toggler {
-    order: 2;
-  }
-
-  
-
   .mega-menu {
     top: 100%;
     left: 0;
     width: 100%;
-    transform: none;
-  }
-
-  .d-flex {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    margin-top: 10px;
+    top: 100%; /* Place below the navbar */
+    transform: none; /* Centered on screen */
   }
 
   .nav-cta, .nav-cta2 {
-    flex: 1;
-  
-    text-align: center;
+    width: 100%;
+    margin: 5px auto;
   }
-
+  
   .nav-cta2 a {
     display: flex;
     align-items: center;

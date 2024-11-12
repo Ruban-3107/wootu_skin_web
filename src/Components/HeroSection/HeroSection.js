@@ -30,7 +30,7 @@ const HeroSection = (data) => {
     />
   ) : (
     <img
-      src="../../Assets/hero-section.png" // Local path for fallback image
+      src="../../Assets/hero-img2.png" // Local path for fallback image
       alt="Hero"
       className="img-fluid hero-image" // Bootstrap class for responsive images
       width={400}

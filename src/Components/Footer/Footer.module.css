@@ -10,7 +10,11 @@ hr{
 border: 10px solid #ffffff 1;
     color: #fff;
 }
-
+.privacy{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end !important;
+}
 @media only screen and (max-width:768px) {
     .opening-timing{
         display: flex;
