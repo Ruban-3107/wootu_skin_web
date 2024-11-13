@@ -1,6 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState, useEffect } from 'react';
-import css from "./TrustContent.module.css";
 import axios from 'axios';
 import { strapi_url } from '../../common/utils';
 import fallbackImage from '../../Assets/trust.png'; // Import your fallback local image
@@ -45,7 +44,7 @@ const TrustContent = () => {
   return (
     <section className="container py-5 trust-container">
       <div className="trust-title">
-        <h1>{trust[0]?.title}</h1>
+        <h1 className='sub-title'>{trust[0]?.title}</h1>
       </div>
       <div className="row align-items-center trust-row">
         {/* Left Side: Image */}

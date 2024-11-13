@@ -53,24 +53,109 @@ const Treatments = () => {
     "Hydra Facial": Hydrafacial,
     "Chemical Peel": chemicalPeel,
     "Carbon Laser": carbon,
-    "Photo Facial":photofacial
-    // Add other treatment local images as needed
+    "Photo Facial": photofacial,
+    "Glycolic Peel": glycolic,
+    "Nano Peel": nano,
+    "Light Peel": light,
+    "Combination Peel": combination,
+    "Yellow Peel": yellow,
+    "Salicylic Peel": salicylie,
+    "Glutathione Peel": glutathione,
+    "Upper Lip": upperlip,
+    "Chin": chin,
+    "Underarms": underarms,
+    "Full Hand": fullhand,
+    "Full Leg": fulleg,
+    "Full Body": fullbody,
+    "Bikini": Bikeni,
+    "Side Locks": sidelocks,
+    "Body LHR": bodylhr,
+    "Lymphatic Drainage": lymphatic,
+    "Abdomen": abdomen,
+    "Back Tucks": backtucks,
+    "Contact Image": contactImg,
+    "Before and After 1": slider1,
+    "Before and After 2": slider2,
+    "Before and After 3": slider3,
+    "Sample Image": Image
   };
+  
 
   const condition = (label) => {
     switch (label) {
       case 'Hydra Facial':
         return '/api/hydra-facials';
+      case 'Chemical Peel':
+        return '/api/chemical-peels';
       case 'Carbon Laser':
         return '/api/carbon-lasers';
-      case 'Chemical Peel':
-        return '/api/chemical-peels' 
       case 'Photo Facial':
-        return '/api/photo-facials'   
+        return '/api/photo-facials';
+      case 'Glycolic Peel':
+        return '/api/glycolic-peels';
+      case 'Nano Peel':
+        return '/api/nano-peels';
+      case 'Light Peel':
+        return '/api/light-peels';
+      case 'Combination Peel':
+        return '/api/combination-peels';
+      case 'Yellow Peel':
+        return '/api/yellow-peels';
+      case 'Salicylic Peel':
+        return '/api/salicylic-peels';
+      case 'Glutathione Peel':
+        return '/api/glutathione-peels';
+      case 'Upper Lip':
+        return '/api/upper-lip';
+      case 'Chin':
+        return '/api/chin';
+      case 'Upper Arms':
+        return '/api/upper-arms';
+      case 'Full Hands':
+        return '/api/full-hands';
+      case 'Full Legs':
+        return '/api/full-legs';
+      case 'Bikini':
+        return '/api/bikini';
+      case 'Full Body':
+        return '/api/full-body';
+      case 'Side Locks':
+        return '/api/side-locks';
+      case '3 Body Part LHR':
+        return '/api/3-body-part-lhr';
+      case 'Lymphatic Drainage':
+        return '/api/lymphatic-drainage';
+      case 'Abdomen Tucks':
+        return '/api/abdomen-tucks';
+      case 'Back Tucks':
+        return '/api/back-tucks';
+      case 'Thigh Tucks':
+        return '/api/thigh-tucks';
+      case 'Arm Tucks':
+        return '/api/arm-tucks';
+      case 'Hip Tucks':
+        return '/api/hip-tucks';
+      case 'Green Coffee-Abdomen, Arms, Hip':
+        return '/api/green-coffee';
+      case 'Neck':
+        return '/api/neck';
+      case 'Lipoflush':
+        return '/api/lipoflush';
+      case 'ULS':
+        return '/api/uls';
+      case 'NMS':
+        return '/api/nms';
+      case 'Cello':
+        return '/api/cello';
+      case 'Cryo(Cool Sculpting)':
+        return '/api/cryo-cool-sculpting';
+      case 'Diet plans per month':
+        return '/api/diet-plans-per-month';
       default:
-        return '/api/hydra-facials';
+        return '/api/hydra-facials'; // Default to Hydra Facial if no match is found
     }
   };
+  
 
   const checkImageSrc = async (url, fallback) => {
     try {
@@ -136,20 +221,20 @@ const Treatments = () => {
     hero_section_image && (<div className="lymphatic-drainage ">
       {/* Hero Section */}
       <section className="heroSection ">
-        <Container className=' py-5'>
+        <Container className='py-5'>
           {/* data[0].hero_section_image */}
 
           <Row className="align-items-center">
-            <Col md={6}>
+            <Col md={6} lg={6} sm={12} className='hero-image-section'>
               <img src={hero_section_image} alt="Hero Image" className="img-fluid" />
             </Col>
-            <Col md={6}>
+            <Col md={6} lg={6} sm={12} className='hero-content'>
               <h1 className="hero-title">{data[0].hero_section_header}
 
               </h1>
               {/* <h4>{data[0].hero_section_text}</h4> */}
-              <p className="lead2">{data[0].hero_section_text}</p>
-              <Button className='hero-btn'  onClick={handleShow}><a href='#'>Book an Appointment</a></Button>
+              <p className="lead">{data[0].hero_section_text}</p>
+              <Button className='hero-btn'  onClick={handleShow}>Book an Appointment</Button>
             </Col>
           </Row>
         </Container>
@@ -164,7 +249,7 @@ const Treatments = () => {
 
         <Container>
 
-        <h1 className='title-treatment'>
+        <h1 className='sub-title1 text-center' style={{textAlign:"center"}}>
 {data[0].benefits_header}
 </h1>
 
@@ -190,7 +275,7 @@ const Treatments = () => {
       <section className="before-after-carousel ">
         {/* data[0].before_after_section_image */}
         <Container>
-        <h1 className='title-treatment'>
+        <h1 className='sub-title1 text-center'>
 {data[0].before_after_section_text
 }
 </h1>
@@ -237,7 +322,7 @@ const Treatments = () => {
       {/* Videos Section */}
       <section className="videos-section py-5">
         <Container>
-        <h1 className='title-treatment'>{data[0].video_section_text}
+        <h1 className='sub-title1'>{data[0].video_section_text}
         </h1>
           <Row className='video-row'>
           {videoSources.map((src, index) => (
@@ -251,38 +336,42 @@ const Treatments = () => {
 
       {/* Final CTA Button */}
       <div className="text-center my-5 d-flex align-item-center justify-content-center ">
-        <div className='w-50'>
-        <Button variant="primary" className='hero-btn' size="lg"  onClick={handleShow}>Book an Appointment</Button>
+        <div className='w-100'>
+        <Button  className='hero-btn' size="md"  onClick={handleShow}>Book an Appointment</Button>
       </div>
       </div>
 
       <Modal show={show} onHide={handleClose} centered size="xl" className='from-popup'>
-        <Modal.Body>
-          <Row className="g-0 frompopup-row">
-            {/* Left Side Image */}
-            <Col xs={12} md={6} className="d-flex align-items-center popup-image">
-              <img
-                src={contactImg}
-                alt="Booking"
-                className="img-fluid w-100"
-                style={{ maxHeight: '100%', objectFit: 'cover' }}
-              />
-            </Col>
+  <Modal.Header closeButton>
+    {/* The close button will be in the top right corner */}
+  </Modal.Header>
+  <Modal.Body>
+    <Row className="g-0 frompopup-row">
+      {/* Left Side Image */}
+      <Col xs={12} md={6} className="d-flex align-items-center popup-image">
+        <img
+          src={contactImg}
+          alt="Booking"
+          className="img-fluid w-100"
+          style={{ maxHeight: '100%', objectFit: 'cover' }}
+        />
+      </Col>
 
-            {/* Right Side iFrame */}
-            <Col xs={12} md={6}>
-              <iframe
-                title="Book An Appointment"
-                src="https://forms.zohopublic.com/wootdiet/form/BookAppointmentskinhairinfluencer/formperma/H6JquAYN72xaH27VQpIZTSmImiLYFntXopffWAzzoN4"
-                width="100%"
-                height="100%"
-                style={{ border: 'none',background:'transparent' }}
-                allowFullScreen
-              ></iframe>
-            </Col>
-          </Row>
-        </Modal.Body>
-      </Modal>
+      {/* Right Side iFrame */}
+      <Col xs={12} md={6} className='popup-zoho-form'>
+        <iframe
+          title="Book An Appointment"
+          src="https://forms.zohopublic.com/wootdiet/form/BookAppointmentskinhairinfluencer/formperma/H6JquAYN72xaH27VQpIZTSmImiLYFntXopffWAzzoN4"
+          width="100%"
+          
+          style={{ border: 'none', background: 'transparent' }}
+          allowFullScreen
+        ></iframe>
+      </Col>
+    </Row>
+  </Modal.Body>
+</Modal>
+
     </div>)
                 
   );

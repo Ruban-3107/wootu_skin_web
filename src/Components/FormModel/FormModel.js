@@ -19,7 +19,7 @@ export default function FormModal(){
       </Row>
           <Row className="g-0 fromModal-row">
             {/* Left Side Image */}
-            <Col xs={12} md={5} className="d-flex align-items-center form-image w-80">
+            <Col xs={12} md={12} lg={6}className="d-flex align-items-center justify-content-center form-image">
               <img
                 src={contactImg}
                 alt="Booking"
@@ -28,8 +28,11 @@ export default function FormModal(){
               />
             </Col>
 
+
+            
+
             {/* Right Side iFrame */}
-            <Col xs={12} md={6} className='formZoho'>
+            <Col xs={12} md={12} lg={6} className='formZoho d-flex align-item-center justify-content-center'>
               <iframe className='formframe'
                 title="Book An Appointment"
                 src="https://forms.zohopublic.com/wootdiet/form/BookAppointmentskinhairinfluencer/formperma/H6JquAYN72xaH27VQpIZTSmImiLYFntXopffWAzzoN4"

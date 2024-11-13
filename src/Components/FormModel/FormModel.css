@@ -13,6 +13,7 @@
 min-height: 80vh;
 }
 
+
 .formZoho{
     min-height: 80vh;
 }
@@ -21,6 +22,10 @@ min-height: 80vh;
     width: 100%;
     min-height: 80vh;
     background-color: #ffffff !important;
+}
+
+.empty-line{
+    width: 100px;
 }
 
 

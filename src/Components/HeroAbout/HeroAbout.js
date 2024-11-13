@@ -23,11 +23,11 @@ export default function HeroAbout(){
       <FadeUpOnScroll>
         <section className="heroSection container-fluid py-5">
             <div className="container">
-        <div className="row HeroAbout-row">
-          <div className="col-md-5 text-center text-md-left">
-            <h1 className="display-4 font-weight-bold">About Us</h1>
-            <h3 className="my-3">Our Mission: Radiant Skin for Everyone</h3>
-            <p className="lead">
+        <div className="row hero-row">
+          <div className="col-md-5 text-center text-md-left hero-content">
+            <h1 className="hero-title">About Us</h1>
+            <h3 className="sub-title3">Our Mission: Radiant Skin for Everyone</h3>
+            <p className="lead3">
             we believe that everyone deserves to feel confident in their skin. Our mission is to empower you with effective, science-backed skincare solutions that enhance natural beauty and promote long-term skin health.
             </p>
             {/* <button className="btn btn-primary mt-3">Get Started</button> */}

@@ -92,7 +92,7 @@ const CustomCarousel = () => {
                     <div className="carousel-text col-lg-6">
                       <h2 className="carousel-title">{slide.heading_text}</h2>
                       <p className="carousel-body-text">{slide.text}</p>
-                      <Button className='hero-btn' onClick={handleShow}><a href='#'>Book an Appointment</a></Button>
+                      <Button className='hero-btn' onClick={handleShow}>Book an Appointment</Button>
                     </div>
                   </div>
                 </div>

@@ -6,6 +6,143 @@ Html,body{
   
 }
 
+/* Navbar */
+/* Navbar Styles */
+.navbar-custom {
+  background-color: #fff;
+  padding: 10px 0;
+}
+
+.navbar-custom .navbar-brand img {
+  width: 80px;
+  height: 80px;
+}
+
+.navbar-custom .nav-link {
+  font-size: 1.4rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.navbar-custom .nav-link:hover {
+  color: #007bff;
+}
+
+.navbar-custom .nav-dropdown-item {
+  font-size: 1rem;
+  padding: 8px 20px;
+}
+
+.navbar-custom .nav-cta,
+.navbar-custom .nav-cta2 {
+  padding: 10px 20px;
+}
+
+.navbar-custom .nav-cta2 a {
+  color: white;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navbar-custom .nav-cta2 .fa-phone {
+  margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+  .navbar-custom .navbar-collapse {
+    text-align: center;
+  }
+
+  .popup-image{
+    height: 0px !important;
+    display: none !important;
+  }
+  .popup-image img{
+    display: none !important;
+  }
+  .carousel-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar-custom .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .navbar-custom .d-flex {
+    flex-direction: column;
+  }
+
+  .lead3{
+    text-align: center !important;
+  }
+
+  .navbar-custom .navbar-nav .nav-link {
+    font-size: 1.1rem;
+  }
+
+  .navbar-custom .navbar-brand img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-custom .navbar-nav .nav-link {
+    font-size: 1.2rem;
+  }
+
+  .navbar-custom .nav-cta,
+  .navbar-custom .nav-cta2 {
+    font-size: 1rem;
+  }
+
+  .navbar-custom .navbar-brand img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+
+.nav-options{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.nav-cta{
+  min-width: 10vw;
+  background-color: transparent !important;
+  color: #8154C8 !important;
+  border: none !important;
+  font-size: 1.4rem !important;
+  font-weight: bold !important;
+}
+
+
+.nav-cta2{
+ min-width: 10vw;
+  background-color: #8154C8 !important;
+display: flex;
+border: none !important;
+align-items: center;
+justify-content: center;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
 .line-trust{
   
   border: 1px solid purple;
@@ -52,36 +189,7 @@ iframe {
   background-color: transparent !important;
 }
 
-.hero-title{
-  font-size: 4rem;
-  font-weight: bold;
-}
 
-.topCon-title{
-  min-height: 20vh;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.lead{
-  font-size: 30px;
-  min-height: 10vh;
-}
-
-
-.homecard-container{
-  width: 100%;
- 
-
-}
-
-.homecard-container > h1{
-  min-height: 20vh;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
 
 .homecard-row{
   display: flex;
@@ -115,20 +223,15 @@ iframe {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  min-height: 10vh !important;
+  
 }
 
-.trust-contanier{
-
-  min-height: 100vh !important;
- 
-}
 
 .trust-row{
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  min-height: 80vh !important;  
+  
 }
 
 .address-list{
@@ -139,7 +242,7 @@ iframe {
   display: flex;
   align-items: center;
   justify-content:center;
-  min-height: 80vh !important;  
+  
 }
 
 .footer{
@@ -197,42 +300,35 @@ iframe {
   justify-content:center;
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 768px){
   .hero-title{
-    font-size: 30px !important;
+  
     text-align: center;
 
+  }
+
+  .sub-title{
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .sub-title3{
+    font-size: 2rem;
+    text-align: center !important;
   }
   .empty-space{
     min-height: 10vh;
     width: 100%;
   }
   .lead{
-font-size: 20px;
+
 text-align: center;
   }
   .hero-image{
     width: 100%;
     height: 100%;
   }
-  .hero-content{
-    min-height: 40vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
 
-  
-
-  
-
-  .homecard-container{
-    min-height: 170vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
   .card-col{
     width: 100%;
     display: flex;
@@ -281,9 +377,9 @@ text-align: center;
   }
 }
 
-@media only screen and (min-width: 600px) and (max-width: 768px) {
+@media only screen  and (max-width: 991px) {
   .hero-title{
-    font-size: 30px !important;
+  
     text-align: center;
     font-weight: bold;
     min-height: 10vh;
@@ -291,15 +387,16 @@ text-align: center;
     align-items: center;
     justify-content: space-around;
   }
-  .heroSection{
- 
+  .hero-content{
     display: flex;
     align-items: center;
     justify-content: center;
+ 
   }
+ 
   .lead{
     text-align: center;
-    font-size: 20px;
+    
   }
   .card{
     width: 100%;
@@ -321,12 +418,7 @@ text-align: center;
     justify-content: center;
     flex-direction: column;
   }
-  .homecard-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
+ 
 }
 
 html {
@@ -415,16 +507,19 @@ html {
 .hero-btn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #5A67D8;
+  background-color: #8154C8 !important;
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
   border-radius: 5px;
+  font-size: 1rem !important;
+  font-weight: bold;
+  border: none !important;
   transition: background-color 0.3s ease;
 }
 
 .hero-btn:hover {
-  background-color: #4C51BF;
+  background-color: #8154C8;
   color: #fff;
 }
 
@@ -486,4 +581,52 @@ html {
     font-size: 0.9rem;
     padding: 10px 20px;
   }
+}
+
+.sub-title1{
+min-height: 10vh;
+text-align: center;
+ font-size: 3.5rem;
+}
+
+
+/* HomeCard */
+.sub-title{
+  display: flex;
+
+ font-size: 3.5rem;
+}
+
+
+.homecard-container{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+
+.lead2{
+  font-size: 3rem;
+}
+
+.sub-title3{
+  font-size: 2rem;
+  text-align: start;
+  font-weight: 700;
+}
+
+.lead3{
+  font-size: 1.5rem;
+  text-align: start;
+  font-weight: 500;
+  color: #000000;
+}
+
+.backgroundSecBg{
+  background-color: #ffffff !important;
+}
+
+.backgroundBg{
+  background-color: #ffffff !important; 
 }

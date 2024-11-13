@@ -53,18 +53,10 @@
     display: block;
   }
 
-  .homecard-container{
-    width: 100%;
-    min-height: 60vh;
- display: flex;
- align-items: center;
- justify-content: space-around;
-
-  }
 
   @media only screen and (max-width: 600px){
     .hero-title{
-      font-size: 30px !important;
+      
       text-align: center;
   
     }
@@ -73,7 +65,7 @@
       width: 100%;
     }
     .lead{
-  font-size: 20px;
+
   text-align: center;
     }
     .hero-image{
@@ -92,12 +84,7 @@
       min-height: 200vh;
     }
   
-    .homecard-container{
-      min-height: 170vh;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-    }
+   
     .card-col{
       width: 100%;
       display: flex;

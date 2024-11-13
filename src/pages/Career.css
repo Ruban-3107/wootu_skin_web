@@ -8,7 +8,7 @@
 
 .great-place-section{
   display: flex;
-  min-height: 80vh;
+  min-height: 60vh;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -19,21 +19,8 @@
 }
 
   
-  .hero-title {
-    font-size: 4rem;
-    font-weight: bold;
-    color: #000000;
-  }
-  
-  .hero-subtitle {
-    font-size: 1.5rem;
-    color: #000;
-  }
-  
-  .hero-body {
-    font-size: 1rem;
-    color: #000;
-  }
+
+
   
   .section-heading {
     font-size: 2rem;
@@ -136,6 +123,9 @@ flex-direction: column;  }
   }
   .career-hero-text{
     text-align: center;
+  }
+  .sub-title1{
+    font-size: 2rem;
   }
   .great-place-section > h2 {
     text-align: center;

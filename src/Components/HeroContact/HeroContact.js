@@ -37,7 +37,7 @@ export default function HeroContact(){
           <div className="col-lg-6 col-md-12 mb-4 mb-lg-0 hero-content">
             <div className="empty-space"></div>
             {hero_text_1 && <h1 className="hero-title">Contact Us</h1>}
-            {hero_text_2 && <p className="lead">Whether you have questions about our services, need product recommendations,  we’re just a message away. Feel free to reach out, and we’ll get back to you as soon as possible.</p>}
+            {hero_text_2 && <p className="lead3">Whether you have questions about our services, need product recommendations,  we’re just a message away. Feel free to reach out, and we’ll get back to you as soon as possible.</p>}
           </div>
 
           {/* Right Side - Image */}

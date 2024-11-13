@@ -70,7 +70,7 @@ const Topservice = () => {
   return (
     (processedServices.length > 0 &&
     <div className="container homecard-container">
-      <h1 className="card-title">Top Services</h1>
+      <h1 className="sub-title">Top Services</h1>
       <div className="row homecard-row">
         {processedServices.map((service) => (
           <div key={service.id} className="col-lg-3 col-md-4 col-sm-12 card-col">

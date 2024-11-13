@@ -1,7 +1,8 @@
-
+import React, { useEffect,useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FadeUpOnScroll from '../FadeUp/FadeUpOnScroll';
 import 'animate.css/animate.min.css';
+import HeroImg from "../../Assets/hero-img2.png";
 
 const HeroSection = (data) => {
   return (
@@ -10,12 +11,11 @@ const HeroSection = (data) => {
 
       <div className="container ">
         <div className="row align-items-center hero-row">
-          {/* Left Side - Text */}
           <div className="col-lg-6 col-md-12 mb-4 mb-lg-0 hero-content">
             <div className="empty-space"></div>
              <h1 className="hero-title">{data.data.data.hero_text_1}</h1>
-            <p className="lead">{data.data.data.hero_text_2}</p>
-           {<button className='hero-btn'><a href='#'>Book an Appointment</a></button> }
+            <p className="lead3">{data.data.data.hero_text_2}</p>
+           {<button className='hero-btn'>Book an Appointment</button> }
           </div>
 
           {/* Right Side - Image */}
@@ -30,7 +30,7 @@ const HeroSection = (data) => {
     />
   ) : (
     <img
-      src="../../Assets/hero-img2.png" // Local path for fallback image
+      src={HeroImg} // Local path for fallback image
       alt="Hero"
       className="img-fluid hero-image" // Bootstrap class for responsive images
       width={400}

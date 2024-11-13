@@ -1,49 +1,4 @@
 
 
-  .HeroAbout-row{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 50vh;
-  }
-
-  .my-3{
-    text-align: left;
-    font-weight: bold;
-    font-size: 1.8rem;
-color: #000;
-
-  }
-
-  .display-4{
-    text-align: left;
-    font-size: 5rem;
-    font-weight: bold;
-  }
-
-  .lead{
-    text-align: left;
-    color: #000;
-font-family: "Inria Sans";
-font-size: 1.6rem;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-  }
 
 
-
-  @media screen and ( max-width : 786px) {
-    .my-3{
-      font-size: 2rem;
-      text-align: center;
-    }
-    .display-4{
-      font-size: 3rem;
-      text-align: center;
-    }
-    .lead{
-      font-size: 1rem;
-      text-align: center;
-    }
-  }

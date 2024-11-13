@@ -20,10 +20,10 @@ return (
     <section className="heroSection ">
       <Container>
       <Row className="align-items-center container">
-        <Col md={6}>
-          <h1 className="hero-title career-hero-title">Join Us at Wootu</h1>
-          <h4 className="hero-subtitle career-hero-subtitle">Your career starts here</h4>
-          <p className="hero-body-text career-hero-text">Explore a place where innovation meets passion.</p>
+        <Col md={6} lg={6} sm={12}>
+          <h1 className="hero-title">Join Us at Wootu</h1>
+          <h4 className="sub-title">Your career starts here</h4>
+          <p className="lead2">Explore a place where innovation meets passion.</p>
         </Col>
         <Col md={6}>
           <img src={CareerHero} alt="Career at Wootu" className="img-fluid" />
@@ -35,7 +35,7 @@ return (
     {/* Section: What makes Wootu a great place to work? */}
     <Container>
     <section className="great-place-section">
-      <h2>What makes Wootu a great place to work?</h2>
+      <h2 className='sub-title1'>What makes Wootu a great place to work?</h2>
       <Row className='value-row'>
 
           <Col md={3} sm={12} className='col-cards'>
@@ -83,8 +83,8 @@ return (
 
 
     <Container  fluid="sm" className="openings-section conatiner-sm my-5">
-    <h2 className="text-center">Currently Now Openings</h2>
-    <p className="text-center">Explore our current job openings and submit your application.</p>
+    <h2 className="text-center sub-title">Currently Now Openings</h2>
+    <p className="text-center lead">Explore our current job openings and submit your application.</p>
     <Row className="justify-content-center form-card">
       <Col xs={12} sm={10} md={8} lg={6}>
         <Form>

@@ -50,7 +50,7 @@ const OurLocations = () => {
 
   return (
     <Container>
-      <h2 className="my-4 loc-title">Our Locations</h2>
+      <h2 className="my-4 sub-title1">Our Locations</h2>
       <hr className='line-con' />
       <Row className="mb-4">
         {locations.slice(0, 3).map((location) => (
