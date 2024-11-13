@@ -15,7 +15,7 @@ import Loader from './Components/Loader/Loader';
 import axios from 'axios';
 import { strapi_url, } from '../src/common/utils';
 import ErrorBoundary from './Components/ErrorBoundary/ErrorBoundary';
-import fallbackImage from './Assets/Header.png';
+import fallbackImage from './Assets/HeaderIndia.png';
 function App() {
   const [isContentLoaded, setIsContentLoaded] = useState(false);
   const location = useLocation();
