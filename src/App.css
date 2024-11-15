@@ -8,51 +8,10 @@ Html,body{
 
 /* Navbar */
 /* Navbar Styles */
-.navbar-custom {
-  background-color: #fff;
-  padding: 10px 0;
-}
 
-.navbar-custom .navbar-brand img {
-  width: 80px;
-  height: 80px;
-}
-
-.navbar-custom .nav-link {
-  font-size: 1.4rem;
-  color: #333;
-  font-weight: 600;
-}
-
-.navbar-custom .nav-link:hover {
-  color: #007bff;
-}
-
-.navbar-custom .nav-dropdown-item {
-  font-size: 1rem;
-  padding: 8px 20px;
-}
-
-.navbar-custom .nav-cta,
-.navbar-custom .nav-cta2 {
-  padding: 10px 20px;
-}
-
-.navbar-custom .nav-cta2 a {
-  color: white;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.navbar-custom .nav-cta2 .fa-phone {
-  margin-right: 5px;
-}
 
 @media (max-width: 768px) {
-  .navbar-custom .navbar-collapse {
-    text-align: center;
-  }
+
 
   .popup-image{
     height: 0px !important;
@@ -67,75 +26,17 @@ Html,body{
     justify-content: center;
   }
 
-  .navbar-custom .navbar-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
 
-  .navbar-custom .d-flex {
-    flex-direction: column;
-  }
 
   .lead3{
     text-align: center !important;
   }
 
-  .navbar-custom .navbar-nav .nav-link {
-    font-size: 1.1rem;
-  }
-
-  .navbar-custom .navbar-brand img {
-    width: 70px;
-    height: 70px;
-  }
-}
-
-@media (max-width: 576px) {
-  .navbar-custom .navbar-nav .nav-link {
-    font-size: 1.2rem;
-  }
-
-  .navbar-custom .nav-cta,
-  .navbar-custom .nav-cta2 {
-    font-size: 1rem;
-  }
-
-  .navbar-custom .navbar-brand img {
-    width: 60px;
-    height: 60px;
-  }
+ 
 }
 
 
-.nav-options{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
 
-.nav-cta{
-  min-width: 10vw;
-  background-color: transparent !important;
-  color: #8154C8 !important;
-  border: none !important;
-  font-size: 1.4rem !important;
-  font-weight: bold !important;
-}
-
-
-.nav-cta2{
- min-width: 10vw;
-  background-color: #8154C8 !important;
-display: flex;
-border: none !important;
-align-items: center;
-justify-content: center;
-  border: none;
-  font-size: 1rem;
-  font-weight: bold;
-}
 
 
 
@@ -586,7 +487,7 @@ html {
 .sub-title1{
 min-height: 10vh;
 text-align: center;
- font-size: 3.5rem;
+ font-size: 2rem;
 }
 
 
@@ -630,3 +531,65 @@ text-align: center;
 .backgroundBg{
   background-color: #ffffff !important; 
 }
+
+
+/* Add this to App.css or an appropriate CSS file */
+.navbar-custom {
+  background-color: #fff;
+}
+
+.nav-options .nav-link, .nav-options .dropdown-item {
+  color: #333;
+}
+
+ .nav-options .nav.link{
+font-size:1rem !important;
+ }
+
+
+.nav-cta, .nav-cta2 {
+  color: #fff;
+  background-color: #8154C8 !important;
+  border: none !important;
+}
+
+.nav-cta a, .nav-cta2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.navbar-brand img {
+  max-height: 80px;
+}
+
+.from-popup {
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+
+.nav-cta{
+  background-color: #8154C8 !important;
+  color: #fff;
+  border: none !important;
+}
+
+
+
+.navbar-custom .nav-options .nav-link {
+  font-size: 1rem; /* Adjust size for nav links */
+  font-weight: bold;
+}
+
+.navbar-custom .nav-options .dropdown-toggle {
+  font-size: 1rem; /* Adjust size for dropdown titles */
+}
+
+.navbar-custom .nav-cta {
+  font-size: 1rem; /* Adjust size for the "Book Now" button */
+}
+
+.navbar-custom .nav-cta2 a {
+  font-size: 1rem; /* Adjust size for the phone button text */
+}
+

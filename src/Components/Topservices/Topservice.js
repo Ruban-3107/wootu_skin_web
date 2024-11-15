@@ -73,7 +73,7 @@ const Topservice = () => {
       <h1 className="sub-title">Top Services</h1>
       <div className="row homecard-row">
         {processedServices.map((service) => (
-          <div key={service.id} className="col-lg-3 col-md-4 col-sm-12 card-col">
+          <div key={service.id} className="col-lg-3 col-md-6 col-sm-12 card-col">
             <div className={styles.card}>
               <img
                 src={service.imageSrc}

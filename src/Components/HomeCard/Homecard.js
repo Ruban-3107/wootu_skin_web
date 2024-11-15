@@ -72,7 +72,7 @@ const HomeCard = () => {
         <h1 className='sub-title'>Top Concerns</h1>
         <div className="row homecard-row">
           {processedConcerns.map((concern) => (
-            <div key={concern.id} className="col-lg-3 col-md-4 col-sm-12 card-col">
+            <div key={concern.id} className="col-lg-3 col-md-6 col-sm-12 card-col">
               <div className={styles.card}>
                 <img
                   src={concern.imageSrc} // Use the resolved image source

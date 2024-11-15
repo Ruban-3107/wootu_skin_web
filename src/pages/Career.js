@@ -35,7 +35,7 @@ return (
     {/* Section: What makes Wootu a great place to work? */}
     <Container>
     <section className="great-place-section">
-      <h2 className='sub-title1'>What makes Wootu a great place to work?</h2>
+      <h2 className='sub-title  p-5'>What makes Wootu a great place to work?</h2>
       <Row className='value-row'>
 
           <Col md={3} sm={12} className='col-cards'>

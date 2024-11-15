@@ -48,17 +48,17 @@ const TrustContent = () => {
       </div>
       <div className="row align-items-center trust-row">
         {/* Left Side: Image */}
-        <div className="col-md-12 col-lg-6 trust-img">
+        <div className="col-md-11 col-lg-6 mt-5 col-sm-12 trust-img align-items-center justify-content-center">
           <img
             src={imageSrc}
             alt="Why you can trust us"
-            width={500} // Adjust width
-            height={500} // Adjust height
+            width={450} // Adjust width
+            height={450} // Adjust height
             className="img-car"
           />
         </div>
         {/* Right Side: Content */}
-        <div className="col-md-12 col-lg-5">
+        <div className="col-md-12 col-lg-6 mt-5">
           <div className="trust-content">
             <strong className="trust-number">{trust[0]?.reviews}</strong>
             <p className="trust-para"> reviews shared by Wootu members</p>

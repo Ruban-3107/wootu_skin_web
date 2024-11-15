@@ -80,7 +80,7 @@ const CustomCarousel = () => {
   return (
     (processedCarousels.length > 0 &&
       <FadeUpOnScroll>
-        <div className="carousel-wrapper w-100 py-5">
+        <div className="carousel-wrapper w-100 gx-5 mt-5 py-5">
           <div className="container w-100">
             <Slider className='car-slider' {...settings}>
               {processedCarousels.map((slide) => (

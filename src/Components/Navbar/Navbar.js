@@ -37,55 +37,62 @@ const CustomNavbar = () => {
 
   return (
     <>
-      <Navbar expand="lg" className="py-0 navbar-custom">
-        <Container>
-          <Navbar.Brand href="#">
-            <img src={logo} alt="Logo" width="100" height="100" />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbarResponsive" />
-          <Navbar.Collapse id="navbarResponsive">
-            <Nav className="me-auto nav-options">
-              <Nav.Link href="/Home">Home</Nav.Link>
-              <NavDropdown title="Slimming" id="slimming-dropdown">
-                {slimming.map((treatment) => (
-                  <NavDropdown.Item key={treatment} onClick={() => handleNavigate(treatment)}>
-                    {treatment}
-                  </NavDropdown.Item>
-                ))}
-              </NavDropdown>
-              <NavDropdown title="Skin" id="skin-dropdown">
-                {skinTreatments.map((treatment) => (
-                  <NavDropdown.Item key={treatment} onClick={() => handleNavigate(treatment)}>
-                    {treatment}
-                  </NavDropdown.Item>
-                ))}
-              </NavDropdown>
-              <NavDropdown title="Hair" id="hair-dropdown">
-                {hairTreatments.map((treatment) => (
-                  <NavDropdown.Item key={treatment} onClick={() => handleNavigate(treatment)}>
-                    {treatment}
-                  </NavDropdown.Item>
-                ))}
-              </NavDropdown>
-              <Nav.Link href="/Career">Career</Nav.Link>
-              <Nav.Link href="/About">About</Nav.Link>
-              <Nav.Link href="/Contact">Contact</Nav.Link>
-            </Nav>
+<Navbar expand="lg" className="py-0 navbar-custom">
+  <Container className="d-flex justify-content-between align-items-center">
+    <Navbar.Brand href="#">
+      <img src={logo} alt="Logo" width="80" height="100" />
+    </Navbar.Brand>
+    <Navbar.Toggle aria-controls="navbarResponsive" />
 
-            <div className="d-flex flex-column flex-lg-row gap-3 mt-3 mt-lg-0">
-              <Button className="nav-cta w-100" onClick={handleShow}>
-                Book Now
-              </Button>
-              <Button className="nav-cta2">
-                <a href="tel:9500412121">
-                  <FontAwesomeIcon icon={faPhone} />
-                  +91 9500412121
-                </a>
-              </Button>
-            </div>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+    <Navbar.Collapse id="navbarResponsive">
+      <div className="d-flex justify-content-center w-100">
+        <Nav className="nav-options d-flex justify-content-evenly w-100">
+          <Nav.Link href="/Home">Home</Nav.Link>
+          <NavDropdown title="Slimming" id="slimming-dropdown">
+            {slimming.map((treatment) => (
+              <NavDropdown.Item key={treatment} onClick={() => handleNavigate(treatment)}>
+                {treatment}
+              </NavDropdown.Item>
+            ))}
+          </NavDropdown>
+          <NavDropdown title="Skin" id="skin-dropdown">
+            {skinTreatments.map((treatment) => (
+              <NavDropdown.Item key={treatment} onClick={() => handleNavigate(treatment)}>
+                {treatment}
+              </NavDropdown.Item>
+            ))}
+          </NavDropdown>
+          <NavDropdown title="Hair" id="hair-dropdown">
+            {hairTreatments.map((treatment) => (
+              <NavDropdown.Item key={treatment} onClick={() => handleNavigate(treatment)}>
+                {treatment}
+              </NavDropdown.Item>
+            ))}
+          </NavDropdown>
+          <Nav.Link href="/Career">Career</Nav.Link>
+          <Nav.Link href="/About">About</Nav.Link>
+          <Nav.Link href="/Contact">Contact</Nav.Link>
+        </Nav>
+      </div>
+    </Navbar.Collapse>
+
+    <div className="d-flex gap-3">
+      <Button className="nav-cta text-nowrap" onClick={handleShow}>
+        Book Now
+      </Button>
+      <Button className="nav-cta2 text-nowrap d-flex align-items-center justify-content-center">
+        <a href="tel:9500412121" className="text-decoration-none text-white d-flex align-items-center">
+          <FontAwesomeIcon icon={faPhone} className="me-2" />
+          +91 9500412121
+        </a>
+      </Button>
+    </div>
+  </Container>
+</Navbar>
+
+
+
+
 
       <Modal show={show} onHide={handleClose} centered size="xl" className="from-popup">
         <Modal.Header closeButton />
